@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   life: 6
-  baseSpeed: 5
-  speed: 5
+  baseSpeed: 7
+  speed: 7
   acuracy: 70
   amo: 30
   maxAmo: 0

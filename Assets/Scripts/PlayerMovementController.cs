@@ -62,7 +62,7 @@ public class PlayerMovementController : MonoBehaviour
     }
 }
 */
-using UnityEngine.InputSystem;
+/*using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -74,7 +74,8 @@ public class PlayerMovementController : MonoBehaviour
     public Stats playerStats;
     float moveSpeed;
     public Rigidbody2D rb;
-
+    public BoxCollider2D hitBox;
+    public BoxCollider2D feet;
     //Dash
     public float baseDashSpeed = 20f;
     float dashSpeed;
@@ -89,8 +90,6 @@ public class PlayerMovementController : MonoBehaviour
 
     void Start()
     {
-        //Añadir a camara
-        Debug.Log("proba GitHub");
         //Movimiento
         moveSpeed = playerStats.baseSpeed;
         dashSpeed = baseDashSpeed;
@@ -114,6 +113,7 @@ public class PlayerMovementController : MonoBehaviour
             if (cooldownTimer <= 0)
             {
                 dashAvilable = true;
+                hitBox.enabled = true;
             }
         }
     }
@@ -140,6 +140,7 @@ public class PlayerMovementController : MonoBehaviour
         if(ctx.started && !isDashing && dashAvilable)
         {
             dashDirection = moveInput.normalized;
+            hitBox.enabled = false;
             isDashing = true;
             dashAvilable = false;
             rb.AddForce(dashDirection * dashSpeed, ForceMode2D.Impulse);
@@ -155,6 +156,102 @@ public class PlayerMovementController : MonoBehaviour
             moveSpeed = playerStats.baseSpeed;
             dashSpeed = baseDashSpeed;
         } else
+        {
+            moveSpeed = playerStats.baseSpeed / 2;
+            dashSpeed = baseDashSpeed / 2;
+            playerStats.isFreezed = true;
+        }
+    }
+}*/
+using UnityEngine.InputSystem;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class PlayerMovementController : MonoBehaviour
+{
+    //Movimiento
+    Vector2 moveInput;
+    Vector2 movement;
+    public Stats playerStats;
+    public float moveSpeed;
+    public BoxCollider2D hitBox;
+    public BoxCollider2D feet;
+
+    //Dash
+    public float baseDashSpeed = 20f;
+    public float dashSpeed;
+    public bool isDashing = false;
+    Vector2 dashDirection;
+    public float dashDuration = 0.1f;
+    float dashTimer;
+
+    public bool dashAvilable = true;
+    public float cooldownDuration = 0.3f;
+    float cooldownTimer;
+
+    void Start()
+    {
+        //Movimiento
+        moveSpeed = playerStats.baseSpeed;
+        dashSpeed = baseDashSpeed;
+        dashTimer = 0f;
+        cooldownTimer = cooldownDuration;
+    }
+    void Update()
+    {
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                transform.Translate(Vector2.zero);
+                isDashing = false;
+            }
+        } else
+        {
+            movement = new Vector2(moveInput.x, moveInput.y).normalized;
+            transform.Translate(movement * moveSpeed * Time.deltaTime);
+        }
+        if (!dashAvilable)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0)
+            {
+                dashAvilable = true;
+                hitBox.enabled = true;
+            }
+        }
+    }
+    public void Move(InputAction.CallbackContext ctx)
+    {
+        if (!isDashing)
+        {
+            moveInput = ctx.ReadValue<Vector2>();
+        }
+       
+    }
+    public void Dash(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started && !isDashing && dashAvilable)
+        {
+            dashDirection = moveInput.normalized;
+            hitBox.enabled = false;
+            isDashing = true;
+            dashAvilable = false;
+            transform.Translate(dashDirection * dashSpeed);
+            dashTimer = dashDuration;
+            cooldownTimer = cooldownDuration;
+        }
+    }//FIX 
+    public void Freeze(InputAction.CallbackContext ctx)
+    {
+        if (playerStats.isFreezed)
+        {
+            playerStats.isFreezed = false;
+            moveSpeed = playerStats.baseSpeed;
+            dashSpeed = baseDashSpeed;
+        }
+        else
         {
             moveSpeed = playerStats.baseSpeed / 2;
             dashSpeed = baseDashSpeed / 2;

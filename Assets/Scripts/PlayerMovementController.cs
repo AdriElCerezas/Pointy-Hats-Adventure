@@ -90,7 +90,7 @@ public class PlayerMovementController : MonoBehaviour
     void Start()
     {
         //Añadir a camara
-
+        Debug.Log("proba GitHub");
         //Movimiento
         moveSpeed = playerStats.baseSpeed;
         dashSpeed = baseDashSpeed;

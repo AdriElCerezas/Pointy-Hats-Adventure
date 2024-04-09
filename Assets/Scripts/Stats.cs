@@ -16,7 +16,6 @@ public class Stats : ScriptableObject
     public bool isBurning;
     public bool isPoisoned;
     public bool facingRight;
-    bool test;
 
     public void Update()
     {

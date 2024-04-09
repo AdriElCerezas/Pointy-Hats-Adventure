@@ -271,9 +271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 7d7f8a0ee54c9344a96bb3373099d023, type: 2}
   moveSpeed: 7
-  hitBox: {fileID: 0}
-  feet: {fileID: 0}
-  baseDashSpeed: 14
+  hitBox: {fileID: 6850416269127205212}
+  feet: {fileID: 1676511892126027041}
+  baseDashSpeed: 30
   dashSpeed: 0
   isDashing: 0
   dashDuration: 0.1

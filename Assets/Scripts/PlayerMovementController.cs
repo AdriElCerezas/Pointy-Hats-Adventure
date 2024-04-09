@@ -181,7 +181,7 @@ public class PlayerMovementController : MonoBehaviour
     public float baseDashSpeed = 20f;
     public float dashSpeed;
     public bool isDashing = false;
-    Vector2 dashDirection;
+    Vector2 dashMovement;
     public float dashDuration = 0.1f;
     float dashTimer;
 
@@ -201,13 +201,15 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isDashing)
         {
+            transform.Translate(dashMovement * dashSpeed * Time.deltaTime);
+            dashMovement = movement;
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0)
             {
-                transform.Translate(Vector2.zero);
                 isDashing = false;
             }
-        } else
+        } 
+        if(!isDashing)
         {
             movement = new Vector2(moveInput.x, moveInput.y).normalized;
             transform.Translate(movement * moveSpeed * Time.deltaTime);
@@ -234,11 +236,11 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (ctx.started && !isDashing && dashAvilable)
         {
-            dashDirection = moveInput.normalized;
+            dashMovement = movement;
             hitBox.enabled = false;
             isDashing = true;
             dashAvilable = false;
-            transform.Translate(dashDirection * dashSpeed);
+            
             dashTimer = dashDuration;
             cooldownTimer = cooldownDuration;
         }

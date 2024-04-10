@@ -176,6 +176,8 @@ public class PlayerMovementController : MonoBehaviour
     public float moveSpeed;
     public BoxCollider2D hitBox;
     public BoxCollider2D feet;
+    Rigidbody2D rb;
+    Vector2 finalPos;
 
     //Dash
     public float baseDashSpeed = 20f;
@@ -184,6 +186,10 @@ public class PlayerMovementController : MonoBehaviour
     Vector2 dashMovement;
     public float dashDuration = 0.1f;
     float dashTimer;
+
+    //Freeze
+    SpriteRenderer spriteRenderer;
+    Color plColor;
 
     public bool dashAvilable = true;
     public float cooldownDuration = 0.3f;
@@ -196,12 +202,18 @@ public class PlayerMovementController : MonoBehaviour
         dashSpeed = baseDashSpeed;
         dashTimer = 0f;
         cooldownTimer = cooldownDuration;
+        
+
+        //Freeze
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        plColor = spriteRenderer.color;
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         if (isDashing)
         {
-            transform.Translate(dashMovement * dashSpeed * Time.deltaTime);
+            finalPos = new Vector2(transform.position.x, transform.position.y) + (movement * dashSpeed * Time.deltaTime);
             dashMovement = movement;
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0)
@@ -212,7 +224,7 @@ public class PlayerMovementController : MonoBehaviour
         if(!isDashing)
         {
             movement = new Vector2(moveInput.x, moveInput.y).normalized;
-            transform.Translate(movement * moveSpeed * Time.deltaTime);
+            finalPos = new Vector2(transform.position.x, transform.position.y) + (movement * moveSpeed * Time.deltaTime);
         }
         if (!dashAvilable)
         {
@@ -223,6 +235,10 @@ public class PlayerMovementController : MonoBehaviour
                 hitBox.enabled = true;
             }
         }
+    }
+    private void FixedUpdate()
+    {
+            rb.MovePosition(finalPos);
     }
     public void Move(InputAction.CallbackContext ctx)
     {
@@ -252,12 +268,14 @@ public class PlayerMovementController : MonoBehaviour
             playerStats.isFreezed = false;
             moveSpeed = playerStats.baseSpeed;
             dashSpeed = baseDashSpeed;
+            spriteRenderer.color = spriteRenderer.color + new Color(0.718f, 0.988f, 1);
         }
         else
         {
             moveSpeed = playerStats.baseSpeed / 2;
             dashSpeed = baseDashSpeed / 2;
             playerStats.isFreezed = true;
+            spriteRenderer.color = plColor;
         }
     }
 }

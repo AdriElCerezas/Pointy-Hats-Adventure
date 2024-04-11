@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: a1c7ac4fded782346a6cfe45888d7c1a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WUU1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634f0f6a1c52c124ca32c1b99e3b74dc
+      internalID: -655749190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUR1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95c8775562ac294892c61e2323bbd7d
+      internalID: -1042449087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WRR1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bc45ee24423de428f4f8741dbaf855
+      internalID: 848997330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDR1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf491d4787f45634aa70c21a27ef22d9
+      internalID: 469963076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDD1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3821527aaef6884e8c16f5822395e0a
+      internalID: 1194151533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDL1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2708a313e7b764b88fb251b9c53532
+      internalID: -723998438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WLL1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfe98f1b3a97444d8ddc805ee4551e9
+      internalID: 1281787986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUL1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d61c4e94fe9cc6489ff0de22cb37156
+      internalID: 773194974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUU2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bdff4580a4be64e8fe2024ef8b771d
+      internalID: 56766734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUR2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48bce90f19202f4299c865eb9e01101
+      internalID: -2018850764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WRR2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7943996f9ba2a4fb3e7aaf14def1de
+      internalID: 933603470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDR2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575b674cc96eae54ea5049c66e53113d
+      internalID: -241292387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDD2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f618d3b3c8e159242b1a7e189ffc8b36
+      internalID: -277496604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDL2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e599d4339dbcd4e9fe90819286d5a3
+      internalID: 338382576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WLL2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479a4a604e490254299de68c55a0e8d6
+      internalID: -100509377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUL2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 216
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f720f89efea1b4983bcbbc152ff827
+      internalID: -1735937408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUU3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf80a4c2dcb27d47b00a3946a32594b
+      internalID: -1324817547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUR3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244ac4f696ad2c84fba3a4929c68c6d7
+      internalID: -1123019967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WRR3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbaa1a0e38d1704f956617107c503e5
+      internalID: 983576082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDR3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564ee66511b3b9b4db469b7ecef9b6ba
+      internalID: -1657493115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDD3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b8b475c29a11f438615758ab606dda
+      internalID: 199321032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WDL3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd4fb2405a36de4f9d9ed5c52070548
+      internalID: -1011331771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WLL3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b82ec4f9b47b5a4194200fc75c4ed27
+      internalID: 1400161782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WUL3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c6a604891729c4c86667eb6b5a9acd
+      internalID: -1353531682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Small-8-Direction-Characters_by_AxulArt_0: 475291742
+      Small-8-Direction-Characters_by_AxulArt_1: 1585406213
+      Small-8-Direction-Characters_by_AxulArt_2: -1210337066
+      Small-8-Direction-Characters_by_AxulArt_3: 527685839
+      Small-8-Direction-Characters_by_AxulArt_32: -1998058755
+      Small-8-Direction-Characters_by_AxulArt_33: 921334217
+      Small-8-Direction-Characters_by_AxulArt_34: -2035772105
+      Small-8-Direction-Characters_by_AxulArt_35: 1993399937
+      Small-8-Direction-Characters_by_AxulArt_36: 1859295331
+      Small-8-Direction-Characters_by_AxulArt_37: 1108749452
+      Small-8-Direction-Characters_by_AxulArt_38: -480517231
+      Small-8-Direction-Characters_by_AxulArt_39: -1724463848
+      Small-8-Direction-Characters_by_AxulArt_4: -258032070
+      Small-8-Direction-Characters_by_AxulArt_40: -601384253
+      Small-8-Direction-Characters_by_AxulArt_41: 1284784790
+      Small-8-Direction-Characters_by_AxulArt_42: -2075471605
+      Small-8-Direction-Characters_by_AxulArt_43: -1929426771
+      Small-8-Direction-Characters_by_AxulArt_44: -527830728
+      Small-8-Direction-Characters_by_AxulArt_45: -1793665603
+      Small-8-Direction-Characters_by_AxulArt_46: -376011901
+      Small-8-Direction-Characters_by_AxulArt_47: 1277298333
+      Small-8-Direction-Characters_by_AxulArt_48: 1304962289
+      Small-8-Direction-Characters_by_AxulArt_49: -1436442154
+      Small-8-Direction-Characters_by_AxulArt_5: 449663407
+      Small-8-Direction-Characters_by_AxulArt_50: -34367882
+      Small-8-Direction-Characters_by_AxulArt_51: 2128743067
+      Small-8-Direction-Characters_by_AxulArt_52: 2032614645
+      Small-8-Direction-Characters_by_AxulArt_53: 1467381699
+      Small-8-Direction-Characters_by_AxulArt_54: 648884485
+      Small-8-Direction-Characters_by_AxulArt_55: -876350387
+      Small-8-Direction-Characters_by_AxulArt_56: -343527299
+      Small-8-Direction-Characters_by_AxulArt_57: -1382315423
+      Small-8-Direction-Characters_by_AxulArt_58: 420219674
+      Small-8-Direction-Characters_by_AxulArt_59: -109981800
+      Small-8-Direction-Characters_by_AxulArt_6: 1434728858
+      Small-8-Direction-Characters_by_AxulArt_60: -2058418794
+      Small-8-Direction-Characters_by_AxulArt_61: -1254449737
+      Small-8-Direction-Characters_by_AxulArt_62: -1330628419
+      Small-8-Direction-Characters_by_AxulArt_63: -446593105
+      Small-8-Direction-Characters_by_AxulArt_64: 2114467952
+      Small-8-Direction-Characters_by_AxulArt_65: 1827777864
+      Small-8-Direction-Characters_by_AxulArt_66: 1365744052
+      Small-8-Direction-Characters_by_AxulArt_67: 750564929
+      Small-8-Direction-Characters_by_AxulArt_68: -1050375839
+      Small-8-Direction-Characters_by_AxulArt_69: -1662954702
+      Small-8-Direction-Characters_by_AxulArt_7: -1398067032
+      Small-8-Direction-Characters_by_AxulArt_70: 1098854860
+      Small-8-Direction-Characters_by_AxulArt_71: 914011804
+      Small-8-Direction-Characters_by_AxulArt_72: 1694663446
+      Small-8-Direction-Characters_by_AxulArt_73: 1800913
+      Small-8-Direction-Characters_by_AxulArt_74: 1819998869
+      Small-8-Direction-Characters_by_AxulArt_75: -144255835
+      Small-8-Direction-Characters_by_AxulArt_76: 2104740249
+      Small-8-Direction-Characters_by_AxulArt_77: 1471992137
+      Small-8-Direction-Characters_by_AxulArt_78: 1049167543
+      Small-8-Direction-Characters_by_AxulArt_79: 887353625
+      Small-8-Direction-Characters_by_AxulArt_80: -2094288149
+      Small-8-Direction-Characters_by_AxulArt_81: -227377474
+      Small-8-Direction-Characters_by_AxulArt_82: 1634560861
+      Small-8-Direction-Characters_by_AxulArt_83: 1609697858
+      Small-8-Direction-Characters_by_AxulArt_84: 846184181
+      Small-8-Direction-Characters_by_AxulArt_85: 1676580772
+      Small-8-Direction-Characters_by_AxulArt_86: 1280211538
+      Small-8-Direction-Characters_by_AxulArt_87: -1839514930
+      Small-8-Direction-Characters_by_AxulArt_88: 439229682
+      Small-8-Direction-Characters_by_AxulArt_89: -1141769682
+      Small-8-Direction-Characters_by_AxulArt_90: -1577600697
+      Small-8-Direction-Characters_by_AxulArt_91: -839182318
+      Small-8-Direction-Characters_by_AxulArt_92: 1044228447
+      Small-8-Direction-Characters_by_AxulArt_93: 2004191162
+      Small-8-Direction-Characters_by_AxulArt_94: -1719380382
+      Small-8-Direction-Characters_by_AxulArt_95: 119683681
+      WDD1: 1194151533
+      WDD2: -277496604
+      WDD3: 199321032
+      WDL1: -723998438
+      WDL2: 338382576
+      WDL3: -1011331771
+      WDR1: 469963076
+      WDR2: -241292387
+      WDR3: -1657493115
+      WLL1: 1281787986
+      WLL2: -100509377
+      WLL3: 1400161782
+      WRR1: 848997330
+      WRR2: 933603470
+      WRR3: 983576082
+      WUL1: 773194974
+      WUL2: -1735937408
+      WUL3: -1353531682
+      WUR1: -1042449087
+      WUR2: -2018850764
+      WUR3: -1123019967
+      WUU1: -655749190
+      WUU2: 56766734
+      WUU3: -1324817547
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

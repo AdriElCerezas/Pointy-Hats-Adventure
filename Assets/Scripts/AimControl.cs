@@ -15,6 +15,7 @@ public class AimControl : MonoBehaviour
     public Vector2 pointing;
     public float angle;
     Camera mainCam;
+    bool mouse = false;
     float offsetX = -1;
     void Start()
     {
@@ -34,6 +35,14 @@ public class AimControl : MonoBehaviour
         {
             sprite.flipX= true;
             transform.eulerAngles = Vector3.forward * ((180 - angle)*-1);
+        }
+        if (mouse)
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = 20;
+            mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
+            mousePosition.z = 0;
+            transform.position = mousePosition + new Vector3(offsetX, 0, 0);
         }
     }
 
@@ -57,11 +66,6 @@ public class AimControl : MonoBehaviour
     }
     public void AimMouse(InputAction.CallbackContext ctx)
     {
-
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 20;
-        mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
-        mousePosition.z = 0;
-        transform.position = mousePosition + new Vector3(offsetX, 0, 0);
+        mouse = true;
     }
 }

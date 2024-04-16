@@ -10,7 +10,15 @@ public class CameraController : MonoBehaviour
     public List<Transform> players = new List<Transform>();
     public GameObject cameraObj;
     public Color[] playerColors = new Color[4];
-    // Start is called before the first frame update
+    public Texture2D cursorTexture;
+    private Vector2 cursorHotspot;
+
+
+    public void Start()
+    {
+        cursorHotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        Cursor.SetCursor(cursorTexture, cursorHotspot, CursorMode.Auto);
+    }
     public void Update()
     {
         if (players.Count > 0)

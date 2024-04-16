@@ -16,16 +16,36 @@ public class AimControl : MonoBehaviour
     public float angle;
     Camera mainCam;
     bool mouse = false;
-    float offsetX = -1;
     void Start()
     {
         mainCam = Camera.main;
         sprite = GetComponent<SpriteRenderer>();
         sprite.sortingOrder = 2;
-        sprite.color =  CharacterSpriteColor.color;
     }
     private void Update()
     {
+        if (mouse)
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
+            mousePosition.Normalize();
+            pointing = new Vector2(mousePosition.x, mousePosition.y);
+
+            if (pointing.x != 0 && pointing.y != 0)
+            {
+                //Angle correction
+                if (pointing.y >= 0)
+                {
+                    angle = Vector2.Angle(pointing, new Vector2(1, 0));
+                    sprite.sortingOrder = 0;
+                }
+                else
+                {
+                    angle = 360 - (Vector2.Angle(pointing, new Vector2(1, 0)));
+                    sprite.sortingOrder = 1;
+                }
+            }
+        }
         //Flìp
         if (pointing.x >= 0)
         {
@@ -35,14 +55,6 @@ public class AimControl : MonoBehaviour
         {
             sprite.flipX= true;
             transform.eulerAngles = Vector3.forward * ((180 - angle)*-1);
-        }
-        if (mouse)
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = 20;
-            mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
-            mousePosition.z = 0;
-            transform.position = mousePosition + new Vector3(offsetX, 0, 0);
         }
     }
 
@@ -67,5 +79,7 @@ public class AimControl : MonoBehaviour
     public void AimMouse(InputAction.CallbackContext ctx)
     {
         mouse = true;
+        //transform.position = mousePosition + new Vector3(offsetX, 0, 0);
+
     }
 }

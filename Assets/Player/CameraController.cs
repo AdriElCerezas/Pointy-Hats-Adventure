@@ -9,9 +9,12 @@ public class CameraController : MonoBehaviour
 {
     public List<Transform> players = new List<Transform>();
     public GameObject cameraObj;
+    public CameraFreeze CameraFreeze;
     public Color[] playerColors = new Color[4];
     public Texture2D cursorTexture;
     private Vector2 cursorHotspot;
+    public float smoothness = 1.0f;
+    public bool freezeCamera;
 
 
     public void Start()
@@ -21,9 +24,13 @@ public class CameraController : MonoBehaviour
     }
     public void Update()
     {
+        freezeCamera = CameraFreeze.IsFrozen();
         if (players.Count > 0)
         {
-            UpdateCameraPosition();
+            if (!freezeCamera)
+            {
+                UpdateCameraPosition();
+            }
         }
     }
     private void OnPlayerJoined(PlayerInput playerInput)
@@ -46,7 +53,7 @@ public class CameraController : MonoBehaviour
     {
         players.Add(playerTransform);
     }
-    void UpdateCameraPosition()
+    /*void UpdateCameraPosition()
     {
         Vector2 midpoint = Vector2.zero; // Usamos Vector2 para operaciones en 2D
 
@@ -59,6 +66,24 @@ public class CameraController : MonoBehaviour
 
         // Ajustamos la posición de la cámara en 2D
         cameraObj.transform.position = new Vector3(midpoint.x, midpoint.y, cameraObj.transform.position.z);
+    }*/
+    void UpdateCameraPosition()
+    {
+        Vector2 midpoint = Vector2.zero; // Usamos Vector2 para operaciones en 2D
+
+        foreach (Transform player in players)
+        {
+            midpoint += (Vector2)player.position; // Convertimos la posición del jugador a un Vector2
+        }
+
+        midpoint /= players.Count;
+
+        // Obtenemos la posición deseada de la cámara
+        Vector3 desiredCameraPosition = new Vector3(midpoint.x, midpoint.y, cameraObj.transform.position.z);
+
+        // Suavizamos el movimiento de la cámara interpolando entre la posición actual y la deseada
+        cameraObj.transform.position = Vector3.Lerp(cameraObj.transform.position, desiredCameraPosition, Time.deltaTime * smoothness);
     }
+
 
 }

@@ -2,9 +2,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 using UnityEngine.UIElements;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine.Animations;
 using UnityEditor;
 

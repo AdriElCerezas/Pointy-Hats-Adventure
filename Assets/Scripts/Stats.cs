@@ -3,7 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Stats")]
 public class Stats : ScriptableObject
 {
-    //General
     public int life;
     public int baseSpeed;
     public int speed;

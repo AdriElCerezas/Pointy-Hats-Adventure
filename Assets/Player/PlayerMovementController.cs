@@ -11,12 +11,13 @@ public class PlayerMovementController : MonoBehaviour
     public PlayerStats playerStats;
     public int playerIndex;
     public Indexer indexer;
+
     //Movimiento
     Vector2 moveInput;
     Vector2 movement;
     Rigidbody2D rb;
-
     Vector2 finalPos;
+
     //Dash
     bool isDashing = false;
     Vector2 dashMovement;
@@ -25,6 +26,7 @@ public class PlayerMovementController : MonoBehaviour
     bool dashAvilable = true;
     float cooldownDuration = 0.3f;
     float cooldownTimer;
+
     void Start()
     {
         indexer = GameObject.Find("PlayerManager").GetComponent<Indexer>();

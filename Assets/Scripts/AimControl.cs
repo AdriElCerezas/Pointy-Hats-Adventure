@@ -16,6 +16,8 @@ public class AimControl : MonoBehaviour
     public float angle;
     Camera mainCam;
     bool mouse = false;
+    Vector3 playerPos;
+    Vector3 mousePos;
     void Start()
     {
         mainCam = Camera.main;
@@ -26,10 +28,11 @@ public class AimControl : MonoBehaviour
     {
         if (mouse)
         {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition = mainCam.ScreenToWorldPoint(mousePosition);
-            mousePosition.Normalize();
-            pointing = new Vector2(mousePosition.x, mousePosition.y);
+            mousePos = Input.mousePosition;
+            playerPos = GetComponentInParent<Transform>().position;
+            mousePos = mainCam.ScreenToWorldPoint(mousePos);
+            pointing = new Vector2(mousePos.x - playerPos.x, mousePos.y - playerPos.y);
+            pointing.Normalize();
 
             if (pointing.x != 0 && pointing.y != 0)
             {
@@ -37,12 +40,12 @@ public class AimControl : MonoBehaviour
                 if (pointing.y >= 0)
                 {
                     angle = Vector2.Angle(pointing, new Vector2(1, 0));
-                    sprite.sortingOrder = 0;
+                    sprite.sortingOrder = 1;
                 }
                 else
                 {
                     angle = 360 - (Vector2.Angle(pointing, new Vector2(1, 0)));
-                    sprite.sortingOrder = 1;
+                    sprite.sortingOrder = 2;
                 }
             }
         }
@@ -67,19 +70,17 @@ public class AimControl : MonoBehaviour
             if (pointing.y >= 0)
             {
                 angle = Vector2.Angle(pointing, new Vector2(1, 0));
-                sprite.sortingOrder = 0;
+                sprite.sortingOrder = 1;
             }
             else
             {
                 angle = 360 - (Vector2.Angle(pointing, new Vector2(1, 0)));
-                sprite.sortingOrder = 1;
+                sprite.sortingOrder = 2;
             }
         }
     }
     public void AimMouse(InputAction.CallbackContext ctx)
     {
         mouse = true;
-        //transform.position = mousePosition + new Vector3(offsetX, 0, 0);
-
     }
 }

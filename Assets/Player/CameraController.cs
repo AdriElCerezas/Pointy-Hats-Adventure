@@ -37,8 +37,7 @@ public class CameraController : MonoBehaviour
     {
         
         AddToList(playerInput.transform);
-        //playerInput.GetComponent<SpriteRenderer>().color = Color().color;
-        int playerIndex = players.Count - 1; // Índice del último jugador agregado
+        int playerIndex = players.Count - 1;
         SpriteRenderer playerRenderer = playerInput.GetComponent<SpriteRenderer>();
         if (playerRenderer != null)
         {
@@ -53,35 +52,19 @@ public class CameraController : MonoBehaviour
     {
         players.Add(playerTransform);
     }
-    /*void UpdateCameraPosition()
-    {
-        Vector2 midpoint = Vector2.zero; // Usamos Vector2 para operaciones en 2D
-
-        foreach (Transform player in players)
-        {
-            midpoint += (Vector2)player.position; // Convertimos la posición del jugador a un Vector2
-        }
-
-        midpoint /= players.Count;
-
-        // Ajustamos la posición de la cámara en 2D
-        cameraObj.transform.position = new Vector3(midpoint.x, midpoint.y, cameraObj.transform.position.z);
-    }*/
     void UpdateCameraPosition()
     {
-        Vector2 midpoint = Vector2.zero; // Usamos Vector2 para operaciones en 2D
+        Vector2 midpoint = Vector2.zero;
 
         foreach (Transform player in players)
         {
-            midpoint += (Vector2)player.position; // Convertimos la posición del jugador a un Vector2
+            midpoint += (Vector2)player.position;
         }
 
         midpoint /= players.Count;
-
-        // Obtenemos la posición deseada de la cámara
         Vector3 desiredCameraPosition = new Vector3(midpoint.x, midpoint.y, cameraObj.transform.position.z);
 
-        // Suavizamos el movimiento de la cámara interpolando entre la posición actual y la deseada
+        //Suavizado de movimiento
         cameraObj.transform.position = Vector3.Lerp(cameraObj.transform.position, desiredCameraPosition, Time.deltaTime * smoothness);
     }
 

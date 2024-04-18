@@ -40,18 +40,17 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isDashing)
         {
-            finalPos = new Vector2(transform.position.x, transform.position.y) + (movement * playerStats.dashSpeed * Time.deltaTime);
-            dashMovement = movement;
+            finalPos = rb.position + (dashMovement * playerStats.dashSpeed * Time.deltaTime);
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0)
             {
                 isDashing = false;
             }
-        } 
-        if(!isDashing)
+        }
+        else
         {
             movement = new Vector2(moveInput.x, moveInput.y).normalized;
-            finalPos = new Vector2(transform.position.x, transform.position.y) + (movement * playerStats.speed * Time.deltaTime);
+            finalPos = rb.position + (movement * playerStats.speed * Time.deltaTime);
         }
         if (!dashAvilable)
         {
@@ -65,7 +64,7 @@ public class PlayerMovementController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-            rb.MovePosition(finalPos);
+        rb.MovePosition(finalPos);
     }
     public void Move(InputAction.CallbackContext ctx)
     {
@@ -73,7 +72,6 @@ public class PlayerMovementController : MonoBehaviour
         {
             moveInput = ctx.ReadValue<Vector2>();
         }
-       
     }
     public void Dash(InputAction.CallbackContext ctx)
     {
@@ -83,7 +81,7 @@ public class PlayerMovementController : MonoBehaviour
             hitBox.enabled = false;
             isDashing = true;
             dashAvilable = false;
-            
+
             dashTimer = dashDuration;
             cooldownTimer = cooldownDuration;
         }

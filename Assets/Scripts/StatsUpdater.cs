@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class StatsUpdater : MonoBehaviour
 {
     public Stats playerStats;
     public int life;
@@ -11,11 +11,7 @@ public class PlayerStats : MonoBehaviour
     public int baseDashSpeed;
     public int dashSpeed;
     public int acuracy;
-    public int amo;
-    public int maxAmo;
-    public int charger;
     public float rangeRadius;
-    public float fireRate;
     public bool isFreezed;
     public bool isBurning;
     public bool isPoisoned;
@@ -27,11 +23,6 @@ public class PlayerStats : MonoBehaviour
         baseDashSpeed = playerStats.baseDashSpeed;
         dashSpeed = playerStats.dashSpeed;
         acuracy = playerStats.acuracy;
-        amo = playerStats.amo;
-        maxAmo = playerStats.maxAmo;
-        charger = playerStats.charger;
-        rangeRadius = playerStats.rangeRadius;
-        fireRate = playerStats.fireRate;
         isFreezed = playerStats.isFreezed;
         isBurning = playerStats.isBurning;
         isPoisoned = playerStats.isPoisoned;

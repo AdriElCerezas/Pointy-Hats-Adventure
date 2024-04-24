@@ -3,18 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Stats")]
 public class Stats : ScriptableObject
 {
-    public int life;
-    public int baseSpeed;
-    public int speed;
-    public int baseDashSpeed;
-    public int dashSpeed;
-    public int acuracy;
-    public int amo;
-    public int maxAmo;
-    public int charger;
-    public float rangeRadius;
-    public float fireRate;
-    public bool isFreezed;
-    public bool isBurning;
-    public bool isPoisoned;
+    public int life; //Hits que puede recibir
+    public int baseSpeed; //Velocidad base
+    public int speed; //Velocidad
+    public int baseDashSpeed; //Dasheo base
+    public int dashSpeed; //Dasheo
+    public int acuracy; //Punteria (0 -> No da, 100 -> Muy precisa) 
+    public float rangeRadius; //Quanto duran las balas hasta que despawnean
+    public bool isFreezed; //Esta congelado
+    public bool isBurning; //Esta quemado
+    public bool isPoisoned; //Esta envenenado
 }

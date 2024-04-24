@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 470852821381779728}
   - component: {fileID: 915517057233536824}
   - component: {fileID: 6622908188500482114}
+  - component: {fileID: 5386149257229075277}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -229,11 +230,7 @@ MonoBehaviour:
   baseDashSpeed: 0
   dashSpeed: 0
   acuracy: 0
-  amo: 0
-  maxAmo: 0
-  charger: 0
   rangeRadius: 0
-  fireRate: 0
   isFreezed: 0
   isBurning: 0
   isPoisoned: 0
@@ -368,6 +365,7 @@ MonoBehaviour:
   playerStats: {fileID: 5994943387130237088}
   playerIndex: 0
   indexer: {fileID: 0}
+  hatManager: {fileID: 5386149257229075277}
 --- !u!114 &915517057233536824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +391,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6329e3c5c042e748812ac2dafd51ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5386149257229075277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820242173566904602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a438b07d935da246876787754b326e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 6850416269127205212}
+  playerStats: {fileID: 5994943387130237088}
 --- !u!1 &4003438060256022343
 GameObject:
   m_ObjectHideFlags: 0

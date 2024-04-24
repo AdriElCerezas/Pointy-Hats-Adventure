@@ -5,7 +5,7 @@ using System;
 
 public class StatusEffect : MonoBehaviour
 {
-    public PlayerStats playerStats;
+    public StatsUpdater playerStats;
     public void Freeze(InputAction.CallbackContext ctx)
     {
         if (playerStats.isFreezed)

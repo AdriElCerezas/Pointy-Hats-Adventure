@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hatted
+  - Enemy
+  - Bullet
+  - EnemyBullet
+  - Room
   layers:
   - Default
   - TransparentFX

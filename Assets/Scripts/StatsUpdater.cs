@@ -10,11 +10,11 @@ public class StatsUpdater : MonoBehaviour
     public int speed;
     public int baseDashSpeed;
     public int dashSpeed;
-    public int acuracy;
     public float rangeRadius;
     public bool isFreezed;
     public bool isBurning;
     public bool isPoisoned;
+    public bool isHatted;
     void Start()
     {
         life = playerStats.life;
@@ -22,7 +22,6 @@ public class StatsUpdater : MonoBehaviour
         speed = playerStats.speed;
         baseDashSpeed = playerStats.baseDashSpeed;
         dashSpeed = playerStats.dashSpeed;
-        acuracy = playerStats.acuracy;
         isFreezed = playerStats.isFreezed;
         isBurning = playerStats.isBurning;
         isPoisoned = playerStats.isPoisoned;

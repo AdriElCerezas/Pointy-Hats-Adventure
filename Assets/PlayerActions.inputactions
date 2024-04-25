@@ -239,6 +239,17 @@
                 },
                 {
                     "name": "",
+                    "id": "19c56d42-5da6-45d3-8cce-cbfe082c99a1",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "AimMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "898f6246-f7ca-438b-a070-e3303a3edf47",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -256,17 +267,6 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "19c56d42-5da6-45d3-8cce-cbfe082c99a1",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "AimMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

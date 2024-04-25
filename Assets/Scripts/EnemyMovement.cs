@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     {
         // Obtener todos los jugadores vivos
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject choosenPlayer = FindClosestPlayer(players);
+        GameObject choosenPlayer = PlayerSelector(players);
 
         // Si se encontró un jugador cercano, mover al enemigo hacia su posición
         if (choosenPlayer != null)
@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         rb.MovePosition(finalPos);
     }
 
-    GameObject FindClosestPlayer(GameObject[] players)
+    GameObject PlayerSelector(GameObject[] players)
     {
         GameObject closestPlayer = null;
         float closestDistance = Mathf.Infinity;

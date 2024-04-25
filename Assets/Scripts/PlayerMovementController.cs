@@ -11,8 +11,6 @@ public class PlayerMovementController : MonoBehaviour
     public StatsUpdater playerStats;
     public int playerIndex;
     public Indexer indexer;
-    public HatManager hatManager;
-    bool isHatted;
 
     //Movimiento
     Vector2 moveInput;
@@ -31,7 +29,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void Start()
     {
-        isHatted = false;
+        playerStats.isHatted = false;
         indexer = GameObject.Find("PlayerManager").GetComponent<Indexer>();
         playerIndex = indexer.SetIndex();
         //Movimiento
@@ -41,7 +39,6 @@ public class PlayerMovementController : MonoBehaviour
     }
     void Update()
     {
-        isHatted = hatManager.GetHatted();
         if (isDashing)
         {
             finalPos = rb.position + (dashMovement * playerStats.dashSpeed * Time.deltaTime);
@@ -62,7 +59,7 @@ public class PlayerMovementController : MonoBehaviour
             if (cooldownTimer <= 0)
             {
                 dashAvilable = true;
-                if (!isHatted)
+                if (!playerStats.isHatted)
                 {
                     hitBox.enabled = true;
                 }

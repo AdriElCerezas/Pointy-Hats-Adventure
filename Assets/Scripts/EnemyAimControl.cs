@@ -7,11 +7,10 @@ using UnityEditor;
 
 public class EnemyAimControl : MonoBehaviour
 {
-    public SpriteRenderer CharacterSpriteColor;
     private SpriteRenderer sprite;
     public Vector2 pointing;
     public float angle;
-    GameObject choosenPlayer;
+    public GameObject choosenPlayer;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -19,8 +18,14 @@ public class EnemyAimControl : MonoBehaviour
     }
     private void Update()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        choosenPlayer = PlayerSelector(players);
+        if (choosenPlayer == null || choosenPlayer.GetComponent<StatsUpdater>().life <= 0)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            if (players.Length >= 1)
+            {
+                choosenPlayer = PlayerSelector(players);
+            }
+        }
 
         if (choosenPlayer != null)
         {

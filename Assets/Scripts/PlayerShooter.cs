@@ -27,14 +27,7 @@ public class PlayerShooter : MonoBehaviour
 
 
             Bullet bulletScript = newBullet.GetComponent<Bullet>();
-            if (bulletScript != null)
-            {
-                bulletScript.InitializeBullet(bulletSpeed, damage, freeze, burn, poison, angle, true);
-            }
-            else
-            {
-                Debug.LogError("El prefab de bala no tiene un componente Bullet adjunto.");
-            }
+            bulletScript.InitializeBullet(bulletSpeed, damage, freeze, burn, poison, angle, true);
         }
     }
     

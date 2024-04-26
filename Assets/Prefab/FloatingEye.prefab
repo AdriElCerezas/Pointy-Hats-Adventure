@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3302494753060849589}
   - component: {fileID: 9059319890436928306}
   - component: {fileID: 4637597439543385861}
+  - component: {fileID: 6046668883479211971}
   m_Layer: 6
-  m_Name: gun
+  m_Name: Gun
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,9 +98,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e664050062b3ea24c9b1f7ffd568f17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterSpriteColor: {fileID: 0}
   pointing: {x: 0, y: 0}
   angle: 0
+  choosenPlayer: {fileID: 0}
+--- !u!114 &6046668883479211971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804595198658868224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a46d808afc417040b3b1cd4a15373d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  bulletSpeed: 5
+  damage: 1
+  angle: 0
+  freeze: 0
+  burn: 0
+  poison: 0
+  bullet: {fileID: 5500644140547055089, guid: 492ad695ee6066b41a2d2901918bbd6b, type: 3}
+  aim: {fileID: 4637597439543385861}
 --- !u!1 &7000083513713089643
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +360,6 @@ MonoBehaviour:
   speed: 0
   baseDashSpeed: 0
   dashSpeed: 0
-  acuracy: 0
   rangeRadius: 0
   isFreezed: 0
   isBurning: 0

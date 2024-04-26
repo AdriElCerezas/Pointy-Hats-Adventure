@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed;
-    private int damage;
-    private bool freeze;
-    private bool burn;
-    private bool poison;
-    private float angle;
+    float speed;
+    public int damage;
+    public bool freeze;
+    public bool burn;
+    public bool poison;
+    float angle;
     public void InitializeBullet(float bulletSpeed, int bulletDamage, bool shouldFreeze, bool shouldBurn, bool shouldPoison, float bulletAngle, bool Player)
     {
         speed = bulletSpeed;

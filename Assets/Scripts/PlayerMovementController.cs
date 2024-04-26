@@ -6,16 +6,14 @@ using System;
 public class PlayerMovementController : MonoBehaviour
 {
     //SetUp
-    public BoxCollider2D hitBox;
-    public BoxCollider2D feet;
     public StatsUpdater playerStats;
     public int playerIndex;
     public Indexer indexer;
+    Rigidbody2D rb;
 
     //Movimiento
     Vector2 moveInput;
     Vector2 movement;
-    Rigidbody2D rb;
     Vector2 finalPos;
 
     //Dash
@@ -24,7 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     float dashDuration = 0.1f;
     float dashTimer;
     bool dashAvilable = true;
-    float cooldownDuration = 0.3f;
+    float cooldownDuration = 0.5f;
     float cooldownTimer;
 
     void Start()
@@ -35,7 +33,7 @@ public class PlayerMovementController : MonoBehaviour
         //Movimiento
         dashTimer = 0f;
         cooldownTimer = cooldownDuration;
-        rb = GetComponent<Rigidbody2D>();
+        rb = playerStats.rb;
     }
     void Update()
     {
@@ -61,7 +59,7 @@ public class PlayerMovementController : MonoBehaviour
                 dashAvilable = true;
                 if (!playerStats.isHatted)
                 {
-                    hitBox.enabled = true;
+                    playerStats.hitbox.enabled = true;
                 }
             }
         }
@@ -82,7 +80,7 @@ public class PlayerMovementController : MonoBehaviour
         if (ctx.started && !isDashing && dashAvilable)
         {
             dashMovement = movement;
-            hitBox.enabled = false;
+            playerStats.hitbox.enabled = false;
             isDashing = true;
             dashAvilable = false;
 

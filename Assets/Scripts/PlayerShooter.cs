@@ -20,7 +20,7 @@ public class PlayerShooter : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext ctx) 
     {
-        if (ctx.started)
+        if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted)
         {
             angle = aim.angle;
             GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);

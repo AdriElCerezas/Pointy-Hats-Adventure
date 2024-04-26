@@ -15,8 +15,12 @@ public class StatsUpdater : MonoBehaviour
     public bool isBurning;
     public bool isPoisoned;
     public bool isHatted;
+    public Collider2D feet;
+    public Collider2D hitbox;
+    public Rigidbody2D rb;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         life = playerStats.life;
         baseSpeed = playerStats.baseSpeed;
         speed = playerStats.speed;

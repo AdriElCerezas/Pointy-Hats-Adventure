@@ -5,21 +5,11 @@ using System;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public BoxCollider2D hitBox;
-    public BoxCollider2D feet;
     public StatsUpdater enemyStats;
-    Rigidbody2D rb;
 
     //Movimiento
     Vector2 direction;
     Vector2 finalPos;
-
-    void Start()
-    {
-        //Movimiento
-        rb = GetComponent<Rigidbody2D>();
-
-    }
 
     void Update()
     {
@@ -35,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(finalPos);
+        enemyStats.rb.MovePosition(finalPos);
     }
 
     GameObject PlayerSelector(GameObject[] players)
@@ -60,6 +50,6 @@ public class EnemyMovement : MonoBehaviour
     {
         // Calcular la dirección hacia el jugador
         direction = (targetPosition - (Vector2)transform.position).normalized;
-        finalPos = rb.position + (direction * enemyStats.speed * Time.deltaTime);
+        finalPos = enemyStats.rb.position + (direction * enemyStats.speed * Time.deltaTime);
     }
 }

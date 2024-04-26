@@ -117,7 +117,7 @@ MonoBehaviour:
   bulletSpeed: 5
   damage: 1
   angle: 0
-  freeze: 0
+  freeze: 1
   burn: 0
   poison: 0
   bullet: {fileID: 5500644140547055089, guid: 492ad695ee6066b41a2d2901918bbd6b, type: 3}
@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 2614062884256789610}
   - component: {fileID: 7868360141390086465}
   - component: {fileID: 2603045015944246443}
+  - component: {fileID: -2825022502663134113}
   m_Layer: 6
   m_Name: FloatingEye
   m_TagString: Enemy
@@ -155,7 +156,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.17, y: 1.65, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3302494753060849589}
@@ -365,6 +366,9 @@ MonoBehaviour:
   isBurning: 0
   isPoisoned: 0
   isHatted: 0
+  feet: {fileID: 8319501230887332654}
+  hitbox: {fileID: 1707924323023753889}
+  rb: {fileID: 9134387305567186253}
 --- !u!114 &2603045015944246443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +381,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36aeeaca8d294ab47aecde0802cdb0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBox: {fileID: 1707924323023753889}
-  feet: {fileID: 8319501230887332654}
   enemyStats: {fileID: 7868360141390086465}
+--- !u!114 &-2825022502663134113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13a7373b29ce8743b2483ce7172a08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

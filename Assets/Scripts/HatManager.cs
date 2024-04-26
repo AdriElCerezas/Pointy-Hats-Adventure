@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HatManager : MonoBehaviour
 {
-    public Collider2D hitbox;
     public StatsUpdater playerStats;
 
     private void Update()
@@ -13,7 +12,7 @@ public class HatManager : MonoBehaviour
         if (playerStats.life <= 0)
         {
             playerStats.isHatted = true;
-            hitbox.enabled = false;
+            playerStats.hitbox.enabled = false;
             transform.gameObject.tag = "Hatted";
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
             {
@@ -24,12 +23,13 @@ public class HatManager : MonoBehaviour
         else
         {
             playerStats.isHatted = false;
-            hitbox.enabled = true;
+            playerStats.hitbox.enabled = true;
             transform.gameObject.tag = "Player";
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
             {
                 r.enabled = true;
             }
+            GetComponent<Renderer>().enabled = true;
         }
     }
 }

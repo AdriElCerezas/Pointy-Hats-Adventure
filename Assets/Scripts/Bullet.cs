@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class Bullet : MonoBehaviour
 {
@@ -20,12 +21,10 @@ public class Bullet : MonoBehaviour
         if (Player)
         {
             transform.gameObject.tag = "Bullet";
-            GetComponent<SpriteRenderer>().color = Color.blue;
         }
         else
         {
             transform.gameObject.tag = "EnemyBullet";
-            GetComponent<SpriteRenderer>().color = Color.red;
         }
 
         BulletMovement();

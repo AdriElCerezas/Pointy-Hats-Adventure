@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa86827859d914949b4daccfb37dd4de, type: 3}
-  m_Name: FloatingEye
+  m_Name: Cyclops
   m_EditorClassIdentifier: 
-  life: 4
-  baseSpeed: 30
-  speed: 30
+  life: 2
+  baseSpeed: 10
+  speed: 10
   baseDashSpeed: 0
   dashSpeed: 0
-  acuracy: 80
+  acuracy: 100
   rangeRadius: 0
   isFreezed: 0
   isBurning: 0

@@ -13,16 +13,12 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   life: 6
-  baseSpeed: 80
-  speed: 80
-  baseDashSpeed: 300
-  dashSpeed: 300
+  baseSpeed: 50
+  speed: 50
+  baseDashSpeed: 200
+  dashSpeed: 200
   acuracy: 70
-  amo: 30
-  maxAmo: 0
-  charger: 120
   rangeRadius: 10
-  fireRate: 2
   isFreezed: 0
   isBurning: 0
   isPoisoned: 0

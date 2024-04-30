@@ -23,7 +23,7 @@ public class PlayerMovementController : MonoBehaviour
     float dashTimer;
     bool dashAvilable = true;
     float cooldownDuration = 0.5f;
-    float cooldownTimer;
+    public float cooldownTimer;
 
     void Start()
     {

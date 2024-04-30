@@ -11,15 +11,18 @@ public class EnemyAimControl : MonoBehaviour
     public Vector2 pointing;
     public float angle;
     public GameObject choosenPlayer;
+    StatsUpdater enemy;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         sprite.sortingOrder = 2;
+        enemy = GetComponentInParent<StatsUpdater>();
     }
     private void Update()
     {
         if (choosenPlayer == null || choosenPlayer.GetComponent<StatsUpdater>().life <= 0)
         {
+            choosenPlayer = null;
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
             if (players.Length >= 1)
             {
@@ -67,7 +70,9 @@ public class EnemyAimControl : MonoBehaviour
     {
         // Calcular la dirección hacia el jugador
         pointing = (targetPosition - (Vector2)transform.position).normalized;
-
+        
+        enemy.animator.SetFloat("Horizontal", pointing.x);
+        enemy.animator.SetFloat("Vertical", pointing.y);
         //Angle correction
         if (pointing.y >= 0)
         {

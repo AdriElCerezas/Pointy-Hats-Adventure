@@ -260,10 +260,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 511
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -361,6 +361,7 @@ MonoBehaviour:
   isBurning: 0
   isPoisoned: 0
   isHatted: 0
+  acuracy: 0
   feet: {fileID: 1676511892126027041}
   hitbox: {fileID: 6850416269127205212}
   rb: {fileID: 8778598798345378668}
@@ -379,6 +380,7 @@ MonoBehaviour:
   playerStats: {fileID: 5994943387130237088}
   playerIndex: 0
   indexer: {fileID: 0}
+  cooldownTimer: 0
 --- !u!114 &915517057233536824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +532,7 @@ MonoBehaviour:
   CharacterSpriteColor: {fileID: 7106209883322401357}
   pointing: {x: 0, y: 0}
   angle: 0
+  acuracy: 100
 --- !u!114 &2564603766468715500
 MonoBehaviour:
   m_ObjectHideFlags: 0

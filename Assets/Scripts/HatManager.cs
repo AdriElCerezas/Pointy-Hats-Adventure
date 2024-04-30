@@ -22,8 +22,12 @@ public class HatManager : MonoBehaviour
         }
         else
         {
+            float t = GetComponent<PlayerMovementController>().cooldownTimer;
+            if (t <= 0)
+            {
+                playerStats.hitbox.enabled = true;
+            }
             playerStats.isHatted = false;
-            playerStats.hitbox.enabled = true;
             transform.gameObject.tag = "Player";
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
             {

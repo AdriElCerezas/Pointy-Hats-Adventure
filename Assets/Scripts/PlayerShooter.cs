@@ -20,6 +20,7 @@ public class PlayerShooter : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext ctx) 
     {
+        
         if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted)
         {
             angle = aim.angle;

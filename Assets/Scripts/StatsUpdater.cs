@@ -15,14 +15,18 @@ public class StatsUpdater : MonoBehaviour
     public bool isBurning;
     public bool isPoisoned;
     public bool isHatted;
+    public float acuracy;
     public Collider2D feet;
     public Collider2D hitbox;
     public Rigidbody2D rb;
+    public Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         life = playerStats.life;
         baseSpeed = playerStats.baseSpeed;
+        acuracy = playerStats.acuracy;
         speed = playerStats.speed;
         baseDashSpeed = playerStats.baseDashSpeed;
         dashSpeed = playerStats.dashSpeed;

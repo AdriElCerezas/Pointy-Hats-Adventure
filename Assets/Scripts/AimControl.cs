@@ -12,6 +12,7 @@ public class AimControl : MonoBehaviour
     private SpriteRenderer sprite;
     public Vector2 pointing;
     public float angle;
+    public float acuracy = 100;
     Camera mainCam;
     bool mouse = false;
     Vector3 playerPos;

@@ -11,7 +11,7 @@ public class AimControl : MonoBehaviour
     public SpriteRenderer CharacterSpriteColor;
     private SpriteRenderer sprite;
     public Vector2 pointing;
-    public float angle;
+    public float angle = 0;
     public float acuracy = 100;
     Camera mainCam;
     bool mouse = false;
@@ -49,15 +49,17 @@ public class AimControl : MonoBehaviour
             }
         }
         //Flìp
+        
         if (pointing.x >= 0)
         {
-            sprite.flipX = false;
+            //sprite.flipX = false;
             transform.eulerAngles = Vector3.forward * angle;
         } else
         {
-            sprite.flipX= true;
-            transform.eulerAngles = Vector3.forward * ((180 - angle)*-1);
+            //sprite.flipX= true;
+            transform.eulerAngles = Vector3.forward * angle; //* ((180 - angle)*-1);
         }
+        
     }
 
     public void AimGamepad(InputAction.CallbackContext ctx)

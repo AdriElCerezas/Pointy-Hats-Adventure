@@ -37,13 +37,13 @@ public class EnemyAimControl : MonoBehaviour
             //sprite aiming
             if (pointing.x >= 0)
             {
-                sprite.flipX = false;
+                //sprite.flipX = false;
                 transform.eulerAngles = Vector3.forward * angle;
             }
             else
             {
-                sprite.flipX = true;
-                transform.eulerAngles = Vector3.forward * ((180 - angle) * -1);
+                //sprite.flipX = true;
+                transform.eulerAngles = Vector3.forward * angle; // * ((180 - angle) * -1);
             }
         }
     }

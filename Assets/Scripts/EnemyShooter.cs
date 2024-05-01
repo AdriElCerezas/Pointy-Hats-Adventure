@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
-    public float fireRate;
     float fireTimer;
     public float bulletSpeed;
     public int damage;
@@ -21,7 +20,7 @@ public class EnemyShooter : MonoBehaviour
     {
         aim = GetComponent<EnemyAimControl>();
         enemy = GetComponentInParent<StatsUpdater>();
-        timerThird = (int)fireRate / 3;
+        timerThird = (int)enemy.fireRate / 3;
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +44,7 @@ public class EnemyShooter : MonoBehaviour
 
                 Bullet bulletScript = newBullet.GetComponent<Bullet>();
                 bulletScript.InitializeBullet(bulletSpeed, damage, freeze, burn, poison, angle, false);
-                fireTimer = fireRate;
+                fireTimer = enemy.fireRate;
                 state = 1;
             }
         }

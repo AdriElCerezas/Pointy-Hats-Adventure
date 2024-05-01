@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1972121876089838111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6788846469803190100}
+  m_Layer: 3
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6788846469803190100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972121876089838111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.881, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6085477081681524798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3820242173566904602
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +396,8 @@ MonoBehaviour:
   feet: {fileID: 1676511892126027041}
   hitbox: {fileID: 6850416269127205212}
   rb: {fileID: 8778598798345378668}
+  animator: {fileID: 0}
+  fireRate: 0.5
 --- !u!114 &470852821381779728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +495,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6788846469803190100}
   m_Father: {fileID: 5960705726637573368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2890302584871818926
@@ -545,7 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf283b3dccfa184085a445fdc664bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aim: {fileID: 155407433172060220}
   bullet: {fileID: 5500644140547055089, guid: 492ad695ee6066b41a2d2901918bbd6b, type: 3}
   bulletSpeed: 10
   damage: 1
@@ -553,3 +586,4 @@ MonoBehaviour:
   burn: 0
   poison: 0
   angle: 0
+  shootingPoint: {fileID: 6788846469803190100}

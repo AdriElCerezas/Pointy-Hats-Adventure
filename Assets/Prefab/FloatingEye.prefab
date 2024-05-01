@@ -113,15 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a46d808afc417040b3b1cd4a15373d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  acuracy: 80
   bulletSpeed: 5
   damage: 1
   freeze: 0
   burn: 0
   poison: 0
   bullet: {fileID: 5500644140547055089, guid: 492ad695ee6066b41a2d2901918bbd6b, type: 3}
-  aim: {fileID: 4637597439543385861}
 --- !u!1 &7000083513713089643
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,9 +363,12 @@ MonoBehaviour:
   isBurning: 0
   isPoisoned: 0
   isHatted: 0
+  acuracy: 0
   feet: {fileID: 8319501230887332654}
   hitbox: {fileID: 1707924323023753889}
   rb: {fileID: 9134387305567186253}
+  animator: {fileID: 0}
+  fireRate: 1
 --- !u!114 &2603045015944246443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 7868360141390086465}
+  stopDistance: 2
 --- !u!114 &-2825022502663134113
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class StatsUpdater : MonoBehaviour
     public Collider2D hitbox;
     public Rigidbody2D rb;
     public Animator animator;
+    public float fireRate;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

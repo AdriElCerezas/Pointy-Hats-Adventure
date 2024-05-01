@@ -5,11 +5,12 @@ using System;
 using UnityEngine.UIElements;
 using UnityEngine.Animations;
 using UnityEditor;
+using static UnityEngine.EventSystems.EventTrigger;
 public class PlayerShooter : MonoBehaviour
 {
-    public AimControl aim;
+    AimControl aim;
     public GameObject bullet;
-
+    StatsUpdater player;
 
     public float bulletSpeed;
     public int damage;
@@ -17,18 +18,32 @@ public class PlayerShooter : MonoBehaviour
     public bool burn;
     public bool poison;
     public float angle;
-
+    float fireTimer;
+    public Transform shootingPoint;
+    private void Start()
+    {
+        aim = GetComponent<AimControl>();
+        player = GetComponentInParent<StatsUpdater>();
+    }
+    void Update()
+    {     
+        if (fireTimer > 0)
+        {
+            fireTimer -= Time.deltaTime;
+        }
+    }
     public void Shoot(InputAction.CallbackContext ctx) 
     {
         
-        if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted)
+        if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted && fireTimer <= 0)
         {
             angle = aim.angle;
-            GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(bullet, shootingPoint.position, Quaternion.identity);
 
 
             Bullet bulletScript = newBullet.GetComponent<Bullet>();
             bulletScript.InitializeBullet(bulletSpeed, damage, freeze, burn, poison, angle, true);
+            fireTimer = player.fireRate;
         }
     }
     

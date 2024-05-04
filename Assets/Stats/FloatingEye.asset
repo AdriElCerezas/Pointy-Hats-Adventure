@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa86827859d914949b4daccfb37dd4de, type: 3}
   m_Name: FloatingEye
   m_EditorClassIdentifier: 
-  life: 4
+  maxLife: 4
   baseSpeed: 30
   speed: 30
   baseDashSpeed: 0

@@ -5,7 +5,10 @@ using UnityEngine;
 public class StatsUpdater : MonoBehaviour
 {
     public Stats playerStats;
+    public int maxLife;
     public int life;
+    public int p_hearts;
+    public int r_hearts;
     public int baseSpeed;
     public int speed;
     public int baseDashSpeed;
@@ -25,7 +28,10 @@ public class StatsUpdater : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        life = playerStats.life;
+        maxLife = playerStats.maxLife;
+        p_hearts = 0;
+        r_hearts = maxLife;
+        life = p_hearts + r_hearts;
         baseSpeed = playerStats.baseSpeed;
         acuracy = playerStats.acuracy;
         speed = playerStats.speed;

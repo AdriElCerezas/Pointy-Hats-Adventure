@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - Room
+  - Heart
   layers:
   - Default
   - TransparentFX

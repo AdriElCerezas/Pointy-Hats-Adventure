@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Stats")]
 public class Stats : ScriptableObject
 {
-    public int life; //Hits que puede recibir
+    public int maxLife; //Hits que puede recibir
     public int baseSpeed; //Velocidad base
     public int speed; //Velocidad
     public int baseDashSpeed; //Dasheo base

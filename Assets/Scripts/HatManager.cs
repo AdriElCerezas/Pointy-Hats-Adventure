@@ -12,7 +12,6 @@ public class HatManager : MonoBehaviour
         if (playerStats.life <= 0)
         {
             playerStats.isHatted = true;
-            playerStats.hitbox.enabled = false;
             transform.gameObject.tag = "Hatted";
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
             {
@@ -22,11 +21,6 @@ public class HatManager : MonoBehaviour
         }
         else
         {
-            float t = GetComponent<PlayerMovementController>().cooldownTimer;
-            if (t <= 0)
-            {
-                playerStats.hitbox.enabled = true;
-            }
             playerStats.isHatted = false;
             transform.gameObject.tag = "Player";
             foreach (Renderer r in GetComponentsInChildren<Renderer>())

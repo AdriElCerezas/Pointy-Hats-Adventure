@@ -253,7 +253,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -353,7 +353,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 26995aa9e74dcec4d9c01be148de2617, type: 2}
+  maxLife: 0
   life: 0
+  p_hearts: 0
+  r_hearts: 0
   baseSpeed: 0
   speed: 0
   baseDashSpeed: 0
@@ -395,3 +398,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13a7373b29ce8743b2483ce7172a08b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartDrop: {fileID: 5561298161467053047, guid: e531eb0a91074d74485778f85892b44d, type: 3}

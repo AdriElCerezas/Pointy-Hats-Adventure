@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class EnemyLifeManager : MonoBehaviour
 {
     StatsUpdater enemy;
     public GameObject heartDrop;
+    public int heartDropRate = 5;
     void Start()
     {
         enemy = GetComponent<StatsUpdater>();
@@ -43,7 +45,8 @@ public class EnemyLifeManager : MonoBehaviour
     {
         //Heart gen
         bool isRed;
-        if (UnityEngine.Random.Range(0, 101) <= 5) //Create a heart 100% drop rate
+    
+        if (UnityEngine.Random.Range(0, 101) <= heartDropRate) //Create a heart 100% drop rate
         {
             Debug.Log("Created");
             if (UnityEngine.Random.Range(0, 101) <= 20) //Purple 20% - Red 80%

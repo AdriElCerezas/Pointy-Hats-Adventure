@@ -20,7 +20,7 @@ public class PlayerLifeManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Disparo
-        if (collision.tag == "EnemyBullet" && gameObject.tag != "Player")
+        if (collision.tag == "EnemyBullet" && gameObject.tag == "Player")
         {
             if (player.life > 0)
             {

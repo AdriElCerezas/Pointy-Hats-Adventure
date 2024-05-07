@@ -20,7 +20,7 @@ public class PlayerShooter : MonoBehaviour
     public float angle;
     float fireTimer;
     public Transform shootingPoint;
-    private void Start()
+    private void Awake()
     {
         aim = GetComponent<AimControl>();
         player = GetComponentInParent<StatsUpdater>();

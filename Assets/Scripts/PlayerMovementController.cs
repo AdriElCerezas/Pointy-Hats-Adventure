@@ -63,6 +63,7 @@ public class PlayerMovementController : MonoBehaviour
                 }
             }
         }
+        playerStats.animator?.SetBool("IsDashing", isDashing);
     }
     private void FixedUpdate()
     {
@@ -73,6 +74,14 @@ public class PlayerMovementController : MonoBehaviour
         if (!isDashing)
         {
             moveInput = ctx.ReadValue<Vector2>();
+        }
+        if (ctx.canceled)
+        {
+            playerStats.animator.SetBool("IsMoving", false);
+        } 
+        if (ctx.started)
+        {
+            playerStats.animator.SetBool("IsMoving", true);
         }
     }
     public void Dash(InputAction.CallbackContext ctx)

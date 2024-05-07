@@ -29,5 +29,6 @@ public class HatManager : MonoBehaviour
             }
             GetComponent<Renderer>().enabled = true;
         }
+        playerStats.animator.SetBool("IsHatted", playerStats.isHatted);
     }
 }

@@ -5,6 +5,7 @@ using System;
 using UnityEngine.UIElements;
 using UnityEngine.Animations;
 using UnityEditor;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class AimControl : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class AimControl : MonoBehaviour
     bool mouse = false;
     Vector3 playerPos;
     Vector3 mousePos;
+    StatsUpdater player;
     void Start()
     {
+        player = GetComponentInParent<StatsUpdater>();
         mainCam = Camera.main;
         sprite = GetComponent<SpriteRenderer>();
         sprite.sortingOrder = 2;
@@ -59,7 +62,9 @@ public class AimControl : MonoBehaviour
             //sprite.flipX= true;
             transform.eulerAngles = Vector3.forward * angle; //* ((180 - angle)*-1);
         }
-        
+        player.animator.SetFloat("Horizontal", pointing.x);
+        player.animator.SetFloat("Vertical", pointing.y);
+
     }
 
     public void AimGamepad(InputAction.CallbackContext ctx)

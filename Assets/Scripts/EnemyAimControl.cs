@@ -20,15 +20,7 @@ public class EnemyAimControl : MonoBehaviour
     }
     private void Update()
     {
-        if (choosenPlayer == null || choosenPlayer.GetComponent<StatsUpdater>().life <= 0)
-        {
-            choosenPlayer = null;
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            if (players.Length >= 1)
-            {
-                choosenPlayer = PlayerSelector(players);
-            }
-        }
+        //choosenPlayer = choosenPlayer;
 
         if (choosenPlayer != null)
         {
@@ -46,24 +38,6 @@ public class EnemyAimControl : MonoBehaviour
                 transform.eulerAngles = Vector3.forward * angle; // * ((180 - angle) * -1);
             }
         }
-    }
-
-    GameObject PlayerSelector(GameObject[] players)
-    {
-        GameObject closestPlayer = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject player in players)
-        {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPlayer = player;
-            }
-        }
-
-        return closestPlayer;
     }
 
     void GetAngle(Vector2 targetPosition)

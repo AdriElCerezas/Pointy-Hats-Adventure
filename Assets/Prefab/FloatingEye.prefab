@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 1707924323023753889}
   - component: {fileID: 2614062884256789610}
   - component: {fileID: 7868360141390086465}
-  - component: {fileID: 2603045015944246443}
   - component: {fileID: -2825022502663134113}
+  - component: {fileID: 3214137611136655997}
+  - component: {fileID: 8198549927632942695}
   m_Layer: 6
   m_Name: FloatingEye
   m_TagString: Enemy
@@ -372,20 +373,6 @@ MonoBehaviour:
   rb: {fileID: 9134387305567186253}
   animator: {fileID: 0}
   fireRate: 1
---- !u!114 &2603045015944246443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7000083513713089643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36aeeaca8d294ab47aecde0802cdb0f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyStats: {fileID: 7868360141390086465}
-  stopDistance: 2
 --- !u!114 &-2825022502663134113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,3 +386,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartDrop: {fileID: 5561298161467053047, guid: e531eb0a91074d74485778f85892b44d, type: 3}
+  heartDropRate: 5
+--- !u!114 &3214137611136655997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36aeeaca8d294ab47aecde0802cdb0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 0}
+  stopDistance: 2
+--- !u!114 &8198549927632942695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d5eb91e5495417db8972217bcb0d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialState: {fileID: 0}
+  stopDistance: 0
+  choosenPlayer: {fileID: 0}
+  enemy: {fileID: 0}

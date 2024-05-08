@@ -12,43 +12,23 @@ public class EnemyMovement : MonoBehaviour
     Vector2 direction;
     Vector2 finalPos;
     public float stopDistance = 2;
-    
+    Transform destination;
 
+    private void Start()
+    {
+        enemyStats = GetComponent<StatsUpdater>();
+    }
     void Update()
     {
-        // Obtener todos los jugadores vivos
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject choosenPlayer = PlayerSelector(players);
-
-        // Si se encontró un jugador cercano, mover al enemigo hacia su posición
-        if (choosenPlayer != null)
+        if(destination != null)
         {
-            MoveTowards(choosenPlayer.transform.position);
+            MoveTowards(destination.position);
         }
     }
     private void FixedUpdate()
     {
         enemyStats.rb.MovePosition(finalPos);
     }
-
-    GameObject PlayerSelector(GameObject[] players)
-    {
-        GameObject closestPlayer = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject player in players)
-        {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPlayer = player;
-            }
-        }
-
-        return closestPlayer;
-    }
-
     void MoveTowards(Vector2 targetPosition)
     {
         float distanceToTarget = Vector2.Distance(transform.position, targetPosition);
@@ -63,5 +43,10 @@ public class EnemyMovement : MonoBehaviour
         {
             enemyStats.animator.SetBool("isMoving", false);
         }
+    }
+
+    public void SetPlayerObj (Transform destination)
+    {
+        this.destination = destination;
     }
 }

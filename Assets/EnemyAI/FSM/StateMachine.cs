@@ -14,6 +14,7 @@ public class StateMachine : MonoBehaviour
     protected StatsUpdater enemy;
     public States state;
     [HideInInspector] protected EnemyMovement enemyMovement;
+    [HideInInspector] public DecisionMaker decision;
 
     public GameObject choosenPlayer;
     public Transform direction;
@@ -22,6 +23,7 @@ public class StateMachine : MonoBehaviour
     {
         StatsUpdater enemy = GetComponent<StatsUpdater>();
         enemyMovement = GetComponent<EnemyMovement>();
+        decision = GetComponent<DecisionMaker>();
     }
     public virtual void Update()
     {

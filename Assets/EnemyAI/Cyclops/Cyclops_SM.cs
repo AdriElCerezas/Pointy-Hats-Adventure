@@ -6,7 +6,6 @@ public class Cyclops_SM : StateMachine
 {
     public override void Update()
     {
-        PlayerSelector();
         switch (state)
         {
             case States.Idle:
@@ -19,14 +18,14 @@ public class Cyclops_SM : StateMachine
                 Idle();
                 break;
         }
+        PlayerSelector();
+        state = decision.Decide(state);
     }
     protected override void Chase()
     {
         direction = choosenPlayer.transform;
         enemyMovement.SetPlayerObj(direction);
     }
-
-
     void PlayerSelector()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");

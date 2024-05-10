@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: -2825022502663134113}
   - component: {fileID: 6687160542026202446}
   - component: {fileID: 766978866901331029}
+  - component: {fileID: -8193593510347564999}
   m_Layer: 6
   m_Name: Cyclops
   m_TagString: Enemy
@@ -436,5 +437,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  decision: {fileID: 0}
   choosenPlayer: {fileID: 0}
   direction: {fileID: 0}
+--- !u!114 &-8193593510347564999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25874b4b67e9b2146bd5ab3f5b0d1d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sm: {fileID: 0}

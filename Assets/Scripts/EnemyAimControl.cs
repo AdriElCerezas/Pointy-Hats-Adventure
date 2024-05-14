@@ -4,34 +4,30 @@ using System;
 using UnityEngine.UIElements;
 using UnityEngine.Animations;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 public class EnemyAimControl : MonoBehaviour
 {
     private SpriteRenderer sprite;
     public Vector2 pointing;
     public float angle;
-    public GameObject choosenPlayer;
+    public Transform choosenPlayer;
     StatsUpdater enemy;
+    public bool Shooting = false;
+    EnemyMovement EnemyMovement;
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         sprite.sortingOrder = 2;
         enemy = GetComponentInParent<StatsUpdater>();
+        EnemyMovement = GetComponentInParent<EnemyMovement>();
     }
     private void Update()
     {
-        if (choosenPlayer == null || choosenPlayer.GetComponent<StatsUpdater>().life <= 0)
+        choosenPlayer = EnemyMovement.destination;
+        if (choosenPlayer != null && EnemyMovement.isChasing)
         {
-            choosenPlayer = null;
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            if (players.Length >= 1)
-            {
-                choosenPlayer = PlayerSelector(players);
-            }
-        }
-
-        if (choosenPlayer != null)
-        {
+            Shooting = true;
             GetAngle(choosenPlayer.transform.position);
 
             //sprite aiming
@@ -43,28 +39,15 @@ public class EnemyAimControl : MonoBehaviour
             else
             {
                 //sprite.flipX = true;
-                transform.eulerAngles = Vector3.forward * angle; // * ((180 - angle) * -1);
+                transform.eulerAngles = Vector3.forward * angle;
             }
         }
-    }
-
-    GameObject PlayerSelector(GameObject[] players)
-    {
-        GameObject closestPlayer = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject player in players)
+        else
         {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPlayer = player;
-            }
+            Shooting=false;
         }
-
-        return closestPlayer;
     }
+
 
     void GetAngle(Vector2 targetPosition)
     {

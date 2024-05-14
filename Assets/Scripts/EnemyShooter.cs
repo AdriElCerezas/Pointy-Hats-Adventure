@@ -25,7 +25,7 @@ public class EnemyShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aim.choosenPlayer != null)
+        if(aim.choosenPlayer != null && aim.Shooting == true)
         {
             fireTimer -= Time.deltaTime;
             if ( fireTimer < 2*timerThird && fireTimer >= timerThird)
@@ -50,6 +50,7 @@ public class EnemyShooter : MonoBehaviour
         }
         else
         {
+            fireTimer = enemy.fireRate;
             state = 1;
         }
         enemy.animator.SetFloat("State", state);

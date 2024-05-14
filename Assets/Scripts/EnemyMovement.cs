@@ -10,57 +10,48 @@ public class EnemyMovement : MonoBehaviour
 
     //Movimiento
     Vector2 direction;
-    Vector2 finalPos;
+    Vector2 finalVel;
     public float stopDistance = 2;
-    
+    public Transform destination;
+    float distanceToTarget;
+    [HideInInspector]public bool isChasing = false;
 
     void Update()
     {
-        // Obtener todos los jugadores vivos
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject choosenPlayer = PlayerSelector(players);
-
         // Si se encontró un jugador cercano, mover al enemigo hacia su posición
-        if (choosenPlayer != null)
+        if (destination != null && destination != transform)
         {
-            MoveTowards(choosenPlayer.transform.position);
+            MoveTowards(destination.position);
+            isChasing = true;
+        } else
+        {
+            finalVel = Vector2.zero;
+            isChasing = false;
         }
     }
     private void FixedUpdate()
     {
-        enemyStats.rb.MovePosition(finalPos);
+        enemyStats.rb.MovePosition((Vector2)transform.position + finalVel);
     }
 
-    GameObject PlayerSelector(GameObject[] players)
+    public void SetDestination(Transform destination)
     {
-        GameObject closestPlayer = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (GameObject player in players)
-        {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestPlayer = player;
-            }
-        }
-
-        return closestPlayer;
+        this.destination = destination;
     }
 
     void MoveTowards(Vector2 targetPosition)
     {
-        float distanceToTarget = Vector2.Distance(transform.position, targetPosition);
+        distanceToTarget =  Vector2.Distance(transform.position, targetPosition);
 
         if (distanceToTarget > stopDistance)
         {
             direction = (targetPosition - (Vector2)transform.position).normalized;
-            finalPos = enemyStats.rb.position + (direction * enemyStats.speed * Time.deltaTime);
+            finalVel = (direction * enemyStats.speed * Time.deltaTime);
             enemyStats.animator.SetBool("isMoving", true);
         }
         else
         {
+            finalVel = Vector2.zero;
             enemyStats.animator.SetBool("isMoving", false);
         }
     }

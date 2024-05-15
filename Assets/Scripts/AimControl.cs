@@ -36,6 +36,9 @@ public class AimControl : MonoBehaviour
             pointing = new Vector2(mousePos.x - playerPos.x, mousePos.y - playerPos.y);
             pointing.Normalize();
 
+            player.animator.SetFloat("Horizontal", pointing.x);
+            player.animator.SetFloat("Vertical", pointing.y);
+
             if (pointing.x != 0 && pointing.y != 0)
             {
                 //Angle correction
@@ -62,8 +65,6 @@ public class AimControl : MonoBehaviour
             //sprite.flipX= true;
             transform.eulerAngles = Vector3.forward * angle; //* ((180 - angle)*-1);
         }
-        player.animator.SetFloat("Horizontal", pointing.x);
-        player.animator.SetFloat("Vertical", pointing.y);
 
     }
 
@@ -83,6 +84,8 @@ public class AimControl : MonoBehaviour
                 angle = 360 - (Vector2.Angle(pointing, new Vector2(1, 0)));
                 sprite.sortingOrder = 2;
             }
+            player.animator.SetFloat("Horizontal", pointing.x);
+            player.animator.SetFloat("Vertical", pointing.y);
         }
     }
     public void AimMouse(InputAction.CallbackContext ctx)

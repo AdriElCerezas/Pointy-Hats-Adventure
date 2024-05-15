@@ -14,7 +14,7 @@ public class PlayerMovementController : MonoBehaviour
     //Movimiento
     Vector2 moveInput;
     Vector2 movement;
-    Vector2 finalPos;
+    Vector2 finalVel;
 
     //Dash
     bool isDashing = false;
@@ -39,7 +39,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isDashing)
         {
-            finalPos = rb.position + (dashMovement * playerStats.dashSpeed * Time.deltaTime);
+            finalVel = (dashMovement * playerStats.dashSpeed * Time.deltaTime);
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0)
             {
@@ -49,7 +49,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             movement = new Vector2(moveInput.x, moveInput.y).normalized;
-            finalPos = rb.position + (movement * playerStats.speed * Time.deltaTime);
+            finalVel = (movement * playerStats.speed * Time.deltaTime);
         }
         if (!dashAvilable)
         {
@@ -67,7 +67,7 @@ public class PlayerMovementController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(finalPos);
+        rb.MovePosition(finalVel + (Vector2)transform.position);
     }
     public void Move(InputAction.CallbackContext ctx)
     {

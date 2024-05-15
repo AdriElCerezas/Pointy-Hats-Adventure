@@ -15,8 +15,8 @@ MonoBehaviour:
   maxLife: 6
   baseSpeed: 1
   speed: 1
-  baseDashSpeed: 200
-  dashSpeed: 200
+  baseDashSpeed: 4
+  dashSpeed: 4
   acuracy: 70
   rangeRadius: 10
   isFreezed: 0

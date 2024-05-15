@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cyclops
   m_EditorClassIdentifier: 
   maxLife: 2
-  baseSpeed: 10
-  speed: 10
+  baseSpeed: 0.5
+  speed: 0.5
   baseDashSpeed: 0
   dashSpeed: 0
   acuracy: 100

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FloatingEye
   m_EditorClassIdentifier: 
   maxLife: 4
-  baseSpeed: 30
-  speed: 30
+  baseSpeed: 1
+  speed: 1
   baseDashSpeed: 0
   dashSpeed: 0
   acuracy: 80

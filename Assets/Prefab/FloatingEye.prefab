@@ -101,6 +101,7 @@ MonoBehaviour:
   pointing: {x: 0, y: 0}
   angle: 0
   choosenPlayer: {fileID: 0}
+  Shooting: 0
 --- !u!114 &6046668883479211971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +137,9 @@ GameObject:
   - component: {fileID: 7868360141390086465}
   - component: {fileID: 2603045015944246443}
   - component: {fileID: -2825022502663134113}
+  - component: {fileID: -7320005692037850717}
+  - component: {fileID: 1053744981479642084}
+  - component: {fileID: 3330141224511625861}
   m_Layer: 6
   m_Name: FloatingEye
   m_TagString: Enemy
@@ -386,6 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 7868360141390086465}
   stopDistance: 2
+  destination: {fileID: 0}
+  isChasing: 0
 --- !u!114 &-2825022502663134113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,3 +405,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartDrop: {fileID: 5561298161467053047, guid: e531eb0a91074d74485778f85892b44d, type: 3}
+  heartDropRate: 5
+--- !u!95 &-7320005692037850717
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1053744981479642084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49500e46c42144e39a6e36e04ccb0491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+--- !u!114 &3330141224511625861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af717a9c01f84f7a9c476ca08f53d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closestPlayer: {fileID: 0}

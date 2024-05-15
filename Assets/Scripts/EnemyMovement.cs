@@ -28,6 +28,14 @@ public class EnemyMovement : MonoBehaviour
             finalVel = Vector2.zero;
             isChasing = false;
         }
+        if (finalVel != Vector2.zero)
+        {
+            enemyStats.animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            enemyStats.animator.SetBool("isMoving", false);
+        }
     }
     private void FixedUpdate()
     {
@@ -47,12 +55,10 @@ public class EnemyMovement : MonoBehaviour
         {
             direction = (targetPosition - (Vector2)transform.position).normalized;
             finalVel = (direction * enemyStats.speed * Time.deltaTime);
-            enemyStats.animator.SetBool("isMoving", true);
         }
         else
         {
             finalVel = Vector2.zero;
-            enemyStats.animator.SetBool("isMoving", false);
         }
     }
 }

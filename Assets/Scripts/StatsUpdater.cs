@@ -9,10 +9,10 @@ public class StatsUpdater : MonoBehaviour
     public int life;
     public int p_hearts;
     public int r_hearts;
-    public int baseSpeed;
-    public int speed;
-    public int baseDashSpeed;
-    public int dashSpeed;
+    public float baseSpeed;
+    public float speed;
+    public float baseDashSpeed;
+    public float dashSpeed;
     public float rangeRadius;
     public bool isFreezed;
     public bool isBurning;

@@ -65,7 +65,7 @@ public class CameraController : MonoBehaviour
         Vector3 desiredCameraPosition = new Vector3(midpoint.x, midpoint.y, cameraObj.transform.position.z);
 
         //Suavizado de movimiento
-        cameraObj.transform.position = Vector3.Lerp(cameraObj.transform.position, desiredCameraPosition, Time.deltaTime * smoothness);
+        cameraObj.transform.position = Vector3.Lerp(cameraObj.transform.position, desiredCameraPosition, 0.1f * smoothness);
     }
 
 

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   maxLife: 6
-  baseSpeed: 50
-  speed: 50
+  baseSpeed: 1
+  speed: 1
   baseDashSpeed: 200
   dashSpeed: 200
   acuracy: 70

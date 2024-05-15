@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToTarget > stopDistance)
         {
             direction = (targetPosition - (Vector2)transform.position).normalized;
-            finalVel = (direction * enemyStats.speed * Time.deltaTime);
+            finalVel = (direction * enemyStats.speed * 0.1f);
         }
         else
         {

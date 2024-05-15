@@ -422,7 +422,7 @@ MonoBehaviour:
   hitbox: {fileID: 6850416269127205212}
   rb: {fileID: 8778598798345378668}
   animator: {fileID: 0}
-  fireRate: 0.5
+  fireRate: 0.2
 --- !u!114 &470852821381779728
 MonoBehaviour:
   m_ObjectHideFlags: 0

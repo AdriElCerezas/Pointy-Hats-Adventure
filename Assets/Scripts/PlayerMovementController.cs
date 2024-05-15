@@ -39,7 +39,7 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (isDashing)
         {
-            finalVel = (dashMovement * playerStats.dashSpeed * Time.deltaTime);
+            finalVel = (dashMovement * playerStats.dashSpeed * 0.1f);
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0)
             {
@@ -49,7 +49,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             movement = new Vector2(moveInput.x, moveInput.y).normalized;
-            finalVel = (movement * playerStats.speed * Time.deltaTime);
+            finalVel = (movement * playerStats.speed * 0.1f);
         }
         if (!dashAvilable)
         {

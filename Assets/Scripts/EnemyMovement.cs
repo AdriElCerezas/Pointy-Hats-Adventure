@@ -35,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             enemyStats.animator.SetBool("isMoving", false);
+            enemyStats.animator.SetBool("isChasing", isChasing);
         }
     }
     private void FixedUpdate()

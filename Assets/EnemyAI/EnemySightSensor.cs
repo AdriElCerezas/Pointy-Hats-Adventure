@@ -5,14 +5,13 @@ using UnityEngine;
 public class EnemySightSensor : MonoBehaviour
 {
     public Transform closestPlayer;
-    float sightDistance = 5.0f;
+    public float sightDistance = 5.0f;
     float lostDistance = 10.0f;
     GameObject[] players;
     private void Awake()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         closestPlayer = PlayerSelector(players)?.GetComponent<Transform>();
-        sightDistance = GetComponent<EnemyMovement>().stopDistance * 1.5f;
         lostDistance = sightDistance * 2;
     }
 

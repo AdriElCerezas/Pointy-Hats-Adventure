@@ -4,7 +4,6 @@ using System;
 using UnityEngine.UIElements;
 using UnityEngine.Animations;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 
 public class EnemyAimControl : MonoBehaviour
 {

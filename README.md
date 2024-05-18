@@ -6,3 +6,4 @@ El control del personaje se realiza con WASD o el Joystick-I o el Crosspad
 El dash con Espacio o el South-Button de un gamepad.
 Puedes reducir la velocidad como si se freezeara con F o el West-Button
 El apuntado se realiza con el raton o el Joystick-D
+Usa la tecla P para summonear 4 enemigos

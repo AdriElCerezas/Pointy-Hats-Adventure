@@ -19,7 +19,7 @@ public class CollisionAvoidanceBehavior : Steering
         {
             if (agent.gameObject != gameObject)
             {
-                targets[count++] = agent.transform;
+                targets[count++] = agent?.transform;
             }
         }
     }

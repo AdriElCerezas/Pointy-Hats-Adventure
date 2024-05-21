@@ -17,4 +17,8 @@ public class SeekBehavior : Steering
             angular = 0.0f
         };
     }
+    public void SetDestination(Transform destination)
+    {
+        target = destination;
+    }
 }

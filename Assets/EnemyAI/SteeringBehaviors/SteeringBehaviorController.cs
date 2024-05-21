@@ -6,10 +6,12 @@ public class SteeringBehaviorController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Steering[] steerings;
+    private EnemyMovement enemyMovement;
 
-    public float maxAcceleration = 10f;
-    public float maxAngularAcceleration = 3f;
+    public float maxAcceleration = 3f;
+    public float maxAngularAcceleration = 2f;
     public float drag = 1f;
+    Vector2 steer = Vector2.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -21,20 +23,23 @@ public class SteeringBehaviorController : MonoBehaviour
 
     void FixedUpdate ()
     {
-        Vector2 accelaration = Vector2.zero;
+        Vector2 finalDir = Vector2.zero;
         
         foreach (Steering behavior in steerings)
         {
             SteeringData steering = behavior.GetSteering(this);
-            accelaration += steering.linear * behavior.GetWeight();
+            finalDir += steering.linear * behavior.GetWeight();
         }
             
-        if (accelaration.magnitude > maxAcceleration)
+        if (finalDir.magnitude > maxAcceleration)
         {
-            accelaration.Normalize();
-            accelaration *= maxAcceleration;
+            finalDir.Normalize();
+            finalDir *= maxAcceleration;
         }
-        
-        rb.AddForce(accelaration);
+        steer = finalDir.normalized; 
+    }
+    public Vector2 GetSteer()
+    {
+        return steer;
     }
 }

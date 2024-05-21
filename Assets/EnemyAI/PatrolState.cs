@@ -14,7 +14,7 @@ public class PatrolState : BaseState
     public override void Enter()
     {
         base.Enter();
-        var moveScript = enemyFSM.GetComponent<EnemyMovement>();
+        var moveScript = enemyFSM.GetComponent<SeekBehavior>();
 
         moveScript.SetDestination(enemyFSM.transform);
     }
@@ -22,7 +22,7 @@ public class PatrolState : BaseState
     public override void Update()
     {
         base.Update();
-        var moveScript = enemyFSM.GetComponent<EnemyMovement>();
+        var moveScript = enemyFSM.GetComponent<SeekBehavior>();
         //Idle movement
         //To Do
         moveScript.SetDestination(enemyFSM.transform);

@@ -40,12 +40,6 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
-    private void OnGUI()
-    {
-        string content = currentState != null ? currentState.name : "(no current state)";
-        GUILayout.Label($"<color='white'><size=40>{content}</size></color>");
-    }
-
     public new T GetComponent<T>() where T : Component
     {
         if(cachedComponents.ContainsKey(typeof(T)))

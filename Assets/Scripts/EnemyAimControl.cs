@@ -23,7 +23,7 @@ public class EnemyAimControl : MonoBehaviour
     }
     private void Update()
     {
-        choosenPlayer = EnemyMovement.destination;
+        choosenPlayer = GetComponentInParent<SeekBehavior>().target;
         if (choosenPlayer != null && EnemyMovement.isChasing)
         {
             Shooting = true;
@@ -52,9 +52,12 @@ public class EnemyAimControl : MonoBehaviour
     {
         // Calcular la dirección hacia el jugador
         pointing = (targetPosition - (Vector2)transform.position).normalized;
+        if (Shooting)
+        {
+            enemy.animator.SetFloat("Horizontal", pointing.x);
+            enemy.animator.SetFloat("Vertical", pointing.y);
+        }
         
-        enemy.animator.SetFloat("Horizontal", pointing.x);
-        enemy.animator.SetFloat("Vertical", pointing.y);
         //Angle correction
         if (pointing.y >= 0)
         {

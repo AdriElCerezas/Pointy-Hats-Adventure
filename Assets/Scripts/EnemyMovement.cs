@@ -6,28 +6,25 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public StatsUpdater enemyStats;
-
+    [HideInInspector] StatsUpdater enemyStats;
+    [HideInInspector] public bool isChasing = false;
+    [HideInInspector] SteeringBehaviorController scontroller;
     //Movimiento
     Vector2 direction;
     Vector2 finalVel;
     public float stopDistance = 2;
-    public Transform destination;
     float distanceToTarget;
-    [HideInInspector]public bool isChasing = false;
+    private void Awake()
+    {
+        enemyStats = GetComponent<StatsUpdater>();
+        scontroller = GetComponent<SteeringBehaviorController>();
 
+    }
     void Update()
     {
-        // Si se encontró un jugador cercano, mover al enemigo hacia su posición
-        if (destination != null && destination != transform)
-        {
-            MoveTowards(destination.position);
-            isChasing = true;
-        } else
-        {
-            finalVel = Vector2.zero;
-            isChasing = false;
-        }
+        finalVel = scontroller.GetSteer() * enemyStats.speed * 0.1f;
+        //Se esta moviendo?
+        //Se esta moviendo?
         if (finalVel != Vector2.zero)
         {
             enemyStats.animator.SetBool("isMoving", true);
@@ -35,20 +32,21 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             enemyStats.animator.SetBool("isMoving", false);
-            enemyStats.animator.SetBool("isChasing", isChasing);
         }
+        enemyStats.animator.SetBool("isChasing", isChasing);
+        
     }
     private void FixedUpdate()
     {
         enemyStats.rb.MovePosition((Vector2)transform.position + finalVel);
+        if (!isChasing)
+        {
+            enemyStats.animator.SetFloat("Horizontal", finalVel.x);
+            enemyStats.animator.SetFloat("Vertical", finalVel.y);
+        }
     }
 
-    public void SetDestination(Transform destination)
-    {
-        this.destination = destination;
-    }
-
-    void MoveTowards(Vector2 targetPosition)
+    /*void MoveTowards(Vector2 targetPosition)
     {
         distanceToTarget =  Vector2.Distance(transform.position, targetPosition);
 
@@ -61,5 +59,5 @@ public class EnemyMovement : MonoBehaviour
         {
             finalVel = Vector2.zero;
         }
-    }
+    }*/
 }

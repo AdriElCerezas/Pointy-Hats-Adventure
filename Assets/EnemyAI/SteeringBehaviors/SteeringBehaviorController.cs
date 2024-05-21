@@ -22,13 +22,11 @@ public class SteeringBehaviorController : MonoBehaviour
     void FixedUpdate ()
     {
         Vector2 accelaration = Vector2.zero;
-        float rotation = 0f;
         
         foreach (Steering behavior in steerings)
         {
             SteeringData steering = behavior.GetSteering(this);
             accelaration += steering.linear * behavior.GetWeight();
-            rotation += steering.angular * behavior.GetWeight();
         }
             
         if (accelaration.magnitude > maxAcceleration)
@@ -38,10 +36,5 @@ public class SteeringBehaviorController : MonoBehaviour
         }
         
         rb.AddForce(accelaration);
-
-        if (rotation != 0)
-        {
-            rb.rotation = rotation;
-        }
     }
 }

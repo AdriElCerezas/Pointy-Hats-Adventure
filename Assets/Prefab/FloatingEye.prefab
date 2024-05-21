@@ -140,6 +140,9 @@ GameObject:
   - component: {fileID: -7320005692037850717}
   - component: {fileID: 1053744981479642084}
   - component: {fileID: 3330141224511625861}
+  - component: {fileID: 6518831962630224210}
+  - component: {fileID: 2533514600446549447}
+  - component: {fileID: 1310348575135389480}
   m_Layer: 6
   m_Name: FloatingEye
   m_TagString: Enemy
@@ -454,3 +457,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closestPlayer: {fileID: 0}
   sightDistance: 5
+--- !u!114 &6518831962630224210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d92e9fa3dbf4d1ab7fee05ed643ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: 3
+  maxAngularAcceleration: 3
+  drag: 1
+--- !u!114 &2533514600446549447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a66beb9e59774893ad15d96947207ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 0}
+--- !u!114 &1310348575135389480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5553d3c952b7145e0a548c2c7f80e94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  wanderRate: 0.4
+  wanderOffset: 1.5
+  wanderRadius: 4

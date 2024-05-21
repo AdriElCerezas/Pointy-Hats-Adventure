@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 4655537335899689945, guid: 3db3a50412249d34b94cb35c13883b31, type: 3}
+      propertyPath: summonedEnemy
+      value: 
+      objectReference: {fileID: 7000083513713089643, guid: 15e57a7510d34354ca08e63cabfba6c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -278,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonCircle.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4655537335899689945, guid: 3db3a50412249d34b94cb35c13883b31, type: 3}
+      propertyPath: summonedEnemy
+      value: 
+      objectReference: {fileID: 7000083513713089643, guid: 15e57a7510d34354ca08e63cabfba6c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5452,6 +5460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonCircle.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4655537335899689945, guid: 3db3a50412249d34b94cb35c13883b31, type: 3}
+      propertyPath: summonedEnemy
+      value: 
+      objectReference: {fileID: 7000083513713089643, guid: 15e57a7510d34354ca08e63cabfba6c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7992,6 +8004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonCircle.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4655537335899689945, guid: 3db3a50412249d34b94cb35c13883b31, type: 3}
+      propertyPath: summonedEnemy
+      value: 
+      objectReference: {fileID: 7000083513713089643, guid: 15e57a7510d34354ca08e63cabfba6c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

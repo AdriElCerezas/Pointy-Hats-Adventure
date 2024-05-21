@@ -20,7 +20,7 @@ public class EnemyShooter : MonoBehaviour
     {
         aim = GetComponent<EnemyAimControl>();
         enemy = GetComponentInParent<StatsUpdater>();
-        timerThird = (int)enemy.fireRate / 3;
+        timerThird = enemy.fireRate / 3;
     }
     // Update is called once per frame
     void Update()
@@ -28,17 +28,9 @@ public class EnemyShooter : MonoBehaviour
         if(aim.choosenPlayer != null && aim.Shooting == true)
         {
             fireTimer -= Time.deltaTime;
-            if ( fireTimer < 2*timerThird && fireTimer >= timerThird)
-            {
-                state = 2;
-            }
-            if (fireTimer < timerThird)
-            {
-                state = 3;
-            }
             if (fireTimer <= 0)
             {
-                angle = aim.angle + alea.Next((int)(100-enemy.acuracy)*-1, (int)(100 - enemy.acuracy) *1);
+                angle = aim.angle + alea.Next((int)(100 - enemy.acuracy) * -1, (int)(100 - enemy.acuracy) * 1);
                 GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
 
 
@@ -46,6 +38,14 @@ public class EnemyShooter : MonoBehaviour
                 bulletScript.InitializeBullet(bulletSpeed, damage, freeze, burn, poison, angle, false);
                 fireTimer = enemy.fireRate;
                 state = 1;
+            }
+            if ( fireTimer <= 2*timerThird && fireTimer > timerThird)
+            {
+                state = 2;
+            }
+            if (fireTimer <= timerThird && fireTimer > 0)
+            {
+                state = 3;
             }
         }
         else

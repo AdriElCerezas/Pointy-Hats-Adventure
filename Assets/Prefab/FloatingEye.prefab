@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartDrop: {fileID: 5561298161467053047, guid: e531eb0a91074d74485778f85892b44d, type: 3}
-  heartDropRate: 5
+  heartDropRate: 10
 --- !u!95 &-7320005692037850717
 Animator:
   serializedVersion: 5

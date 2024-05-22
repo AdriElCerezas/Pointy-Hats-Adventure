@@ -101,6 +101,7 @@ MonoBehaviour:
   pointing: {x: 0, y: 0}
   angle: 0
   choosenPlayer: {fileID: 0}
+  Shooting: 0
 --- !u!114 &6046668883479211971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +140,10 @@ GameObject:
   - component: {fileID: 6687160542026202446}
   - component: {fileID: 2690750042893573083}
   - component: {fileID: 7831469577921146886}
+  - component: {fileID: 2064702605864042640}
+  - component: {fileID: -5546418989642173360}
+  - component: {fileID: -3775497013720998430}
+  - component: {fileID: 1954626281756035874}
   m_Layer: 6
   m_Name: Cyclops
   m_TagString: Enemy
@@ -387,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36aeeaca8d294ab47aecde0802cdb0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 7868360141390086465}
+  isChasing: 0
   stopDistance: 7
 --- !u!114 &-2825022502663134113
 MonoBehaviour:
@@ -449,5 +454,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af717a9c01f84f7a9c476ca08f53d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closestPlayer: {fileID: 0}
   sightDistance: 5
-  lostDistance: 10
+--- !u!114 &2064702605864042640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d92e9fa3dbf4d1ab7fee05ed643ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: 3
+  maxAngularAcceleration: 2
+  drag: 1
+  target: {fileID: 0}
+--- !u!114 &-5546418989642173360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783236911dac34a7e9c008e532bdcc4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  targetRadius: 1.5
+  slowRadius: 5
+  target: {fileID: 0}
+--- !u!114 &-3775497013720998430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a66beb9e59774893ad15d96947207ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 0}
+--- !u!114 &1954626281756035874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5553d3c952b7145e0a548c2c7f80e94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  wanderRate: 0.4
+  wanderOffset: 1.5
+  wanderRadius: 4

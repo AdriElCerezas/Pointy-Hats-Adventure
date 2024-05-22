@@ -8,6 +8,7 @@ public class SeekBehavior : Steering
 
     public override SteeringData GetSteering(SteeringBehaviorController steeringController)
     {
+        target = GetComponent<SteeringBehaviorController>().target;
         if (target == null)
             return new SteeringData();
 
@@ -16,9 +17,5 @@ public class SeekBehavior : Steering
             linear = (target.position - transform.position).normalized * steeringController.maxAcceleration,
             angular = 0.0f
         };
-    }
-    public void SetDestination(Transform destination)
-    {
-        target = destination;
     }
 }

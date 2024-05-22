@@ -12,10 +12,12 @@ public class SteeringBehaviorController : MonoBehaviour
     public float maxAngularAcceleration = 2f;
     public float drag = 1f;
     Vector2 steer = Vector2.zero;
+    public Transform target; 
 
     // Start is called before the first frame update
     void Start()
     {
+        target = transform;
         rb = GetComponent<Rigidbody2D>();
         steerings = GetComponents<Steering>();
         rb.drag = drag;
@@ -41,5 +43,9 @@ public class SteeringBehaviorController : MonoBehaviour
     public Vector2 GetSteer()
     {
         return steer;
+    }
+    public void SetDestination(Transform destination)
+    {
+        target = destination;
     }
 }

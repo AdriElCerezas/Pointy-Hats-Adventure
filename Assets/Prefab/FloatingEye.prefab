@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 6518831962630224210}
   - component: {fileID: 2533514600446549447}
   - component: {fileID: 1310348575135389480}
+  - component: {fileID: 6589807566782458900}
   m_Layer: 6
   m_Name: FloatingEye
   m_TagString: Enemy
@@ -470,6 +471,7 @@ MonoBehaviour:
   maxAcceleration: 3
   maxAngularAcceleration: 2
   drag: 1
+  target: {fileID: 0}
 --- !u!114 &2533514600446549447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,3 +502,19 @@ MonoBehaviour:
   wanderRate: 0.3
   wanderOffset: 3
   wanderRadius: 4
+--- !u!114 &6589807566782458900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7000083513713089643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783236911dac34a7e9c008e532bdcc4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  targetRadius: 1.5
+  slowRadius: 5
+  target: {fileID: 0}

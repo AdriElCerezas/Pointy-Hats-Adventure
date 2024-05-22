@@ -8,11 +8,11 @@ public class ArriveBehavior : Steering
     private float targetRadius = 1.5f;
     [SerializeField]
     private float slowRadius = 5f;
-
     public Transform target;
 
     public override SteeringData GetSteering(SteeringBehaviorController steeringController)
     {
+        target = GetComponent<SteeringBehaviorController>().target;
         SteeringData steering = new SteeringData();
         Vector2 direction = target.position - transform.position;
         float distance = direction.magnitude;

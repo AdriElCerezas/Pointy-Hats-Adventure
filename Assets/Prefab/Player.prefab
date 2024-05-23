@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5994943387130237088}
   playerIndex: 0
-  indexer: {fileID: 0}
+  pManager: {fileID: 0}
   cooldownTimer: 0
 --- !u!114 &915517057233536824
 MonoBehaviour:

@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
+    public PlayerManager pm;
+    private void Awake()
+    {
+        pm.onJoin = OnJoin;
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -12,5 +17,9 @@ public class UI_Manager : MonoBehaviour
     public void OnPlayButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+    public void OnJoin(int index)
+    {
+        
     }
 }

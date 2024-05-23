@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     //SetUp
     public StatsUpdater playerStats;
     public int playerIndex;
-    public Indexer indexer;
+    public PlayerManager pManager;
     Rigidbody2D rb;
 
     //Movimiento
@@ -28,8 +28,9 @@ public class PlayerMovementController : MonoBehaviour
     void Start()
     {
         playerStats.isHatted = false;
-        indexer = GameObject.Find("PlayerManager").GetComponent<Indexer>();
-        playerIndex = indexer.SetIndex();
+        pManager = GameObject.Find("GameManager").GetComponent<PlayerManager>();
+        playerIndex = pManager.index;
+        pManager.index++;
         //Movimiento
         dashTimer = 0f;
         cooldownTimer = cooldownDuration;

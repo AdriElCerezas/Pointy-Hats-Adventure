@@ -16,7 +16,7 @@ public class ColorSelector : MonoBehaviour
     public void SetPlayer(GameObject player)
     {
         this.player = player;
-        player.GetComponent<SpriteRenderer>().color = color;
+        SetColor(gameObject);
     }
 
     public void SetColor(GameObject newColor)

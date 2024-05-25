@@ -11,15 +11,15 @@ public class PlayerManager : MonoBehaviour
     public List<GameObject> players = new List<GameObject>();
     public Action<int, GameObject> onJoin;
     public int index = 0;
-    public ColorSelector cs1;// cs2, cs3, cs4;
+    public ColorSelector cs1, cs2, cs3, cs4;
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
         cs1.onColorSet = SetColor;
-        //cs2.onColorSet = SetColor;
-        //cs3.onColorSet = SetColor;
-        //cs4.onColorSet = SetColor;
+        cs2.onColorSet = SetColor;
+        cs3.onColorSet = SetColor;
+        cs4.onColorSet = SetColor;
     }
     void OnPlayerJoined(PlayerInput playerInput)
     {

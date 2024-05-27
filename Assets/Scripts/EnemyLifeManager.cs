@@ -48,21 +48,16 @@ public class EnemyLifeManager : MonoBehaviour
     
         if (UnityEngine.Random.Range(0, 101) <= heartDropRate) //Create a heart 100% drop rate
         {
-            Debug.Log("Created");
             if (UnityEngine.Random.Range(0, 101) <= 20) //Purple 20% - Red 80%
             {
                 isRed = false;
-                Debug.Log("purple");
             }
             else
             {
                 isRed = true;
-                Debug.Log("red");
             }
             GameObject newHeart = Instantiate(heartDrop, transform.position, Quaternion.identity);
-            Debug.Log("Instantiated");
             newHeart.GetComponent<HeartManager>().InitializeHeart(UnityEngine.Random.Range(1,3), isRed);
-            Debug.Log("Init");
         }
     }
 }

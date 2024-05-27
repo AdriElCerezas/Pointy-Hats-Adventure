@@ -605,6 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5500644140547055089, guid: 492ad695ee6066b41a2d2901918bbd6b, type: 3}
+  playerManager: {fileID: 0}
   bulletSpeed: 10
   damage: 1
   freeze: 0

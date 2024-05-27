@@ -7,7 +7,12 @@ using UnityEngine.InputSystem;
 public class PauseController : MonoBehaviour
 {
     bool isPaused = false;
-    public Action<bool> onPause;
+    PlayerManager playerManager;
+    public GameObject pauseScreen;
+    private void Start()
+    {
+        playerManager = GetComponent<PlayerManager>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -17,20 +22,18 @@ public class PauseController : MonoBehaviour
     }
     public void Pause()
     {
-        if (true)
+        if (isPaused)
         {
-            
-            if (isPaused)
-            {
-                isPaused = false;
-                Time.timeScale = 1;
-            }
-            else
-            {
-                isPaused = true;
-                Time.timeScale = 0;
-            }
-            onPause.Invoke(isPaused);
+            isPaused = false;
+            pauseScreen.SetActive(isPaused);
+            Time.timeScale = 1;
         }
+        else
+        {
+            isPaused = true;
+            pauseScreen.SetActive(isPaused);
+            Time.timeScale = 0;
+        }
+        playerManager.enableShooting = !isPaused;
     }
 }

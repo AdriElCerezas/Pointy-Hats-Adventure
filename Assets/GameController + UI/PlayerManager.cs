@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public Action<int, GameObject> onJoin;
     public int index = 0;
     public ColorSelector cs1, cs2, cs3, cs4;
+    public bool enableShooting;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class PlayerManager : MonoBehaviour
         playerInput.name = $"Player {index + 1}";
         DontDestroyOnLoad(playerInput.gameObject);
         onJoin.Invoke(index + 1, playerInput.gameObject);
+        playerInput.GetComponentInChildren<PlayerShooter>().playerManager = this;
     }
     public void EnableJoin()
     {

@@ -11,6 +11,7 @@ public class PlayerShooter : MonoBehaviour
     AimControl aim;
     public GameObject bullet;
     StatsUpdater player;
+    public PlayerManager playerManager;
 
     public float bulletSpeed;
     public int damage;
@@ -35,7 +36,7 @@ public class PlayerShooter : MonoBehaviour
     public void Shoot(InputAction.CallbackContext ctx) 
     {
         
-        if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted && fireTimer <= 0)
+        if (ctx.started && !GetComponentInParent<StatsUpdater>().isHatted && fireTimer <= 0 && playerManager.enableShooting)
         {
             angle = aim.angle;
             GameObject newBullet = Instantiate(bullet, shootingPoint.position, Quaternion.identity);

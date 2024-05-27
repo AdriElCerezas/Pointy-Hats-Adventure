@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     public List<Transform> players = new List<Transform>();
     public GameObject cameraObj;
     public CameraFreeze CameraFreeze;
-    public Color[] playerColors = new Color[4];
     public Texture2D cursorTexture;
     private Vector2 cursorHotspot;
     public float smoothness = 1.0f;
@@ -38,11 +37,6 @@ public class CameraController : MonoBehaviour
         
         AddToList(playerInput.transform);
         int playerIndex = players.Count - 1;
-        SpriteRenderer playerRenderer = playerInput.GetComponent<SpriteRenderer>();
-        if (playerRenderer != null)
-        {
-            playerRenderer.color = playerColors[playerIndex];
-        }
     }
     private void OnPlayerLeft(PlayerInput playerInput)
     {

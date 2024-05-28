@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,7 @@ using UnityEngine;
 public class StatsUpdater : MonoBehaviour
 {
     public Stats playerStats;
-    public int maxLife;
-    private int life;
-    private int p_hearts;
-    public int r_hearts;
+    private int maxLife, life, p_hearts, r_hearts;
     public float baseSpeed;
     public float speed;
     public float baseDashSpeed;
@@ -25,17 +23,18 @@ public class StatsUpdater : MonoBehaviour
     public Animator animator = null;
     public float fireRate;
 
-    public int Life { get => life; set => life = value; }
-    public int P_hearts { get => p_hearts; set => p_hearts = value; }
+    public Action<int> onPurpleHearts;
+    public Action<int> onRedHearts;
+    public Action<int> onMaxLife;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         maxLife = playerStats.maxLife;
-        P_hearts = 0;
-        r_hearts = maxLife;
-        Life = P_hearts + r_hearts;
+        p_hearts = 0;
+        r_hearts = MaxLife;
+        life = P_hearts + R_hearts;
         baseSpeed = playerStats.baseSpeed;
         acuracy = playerStats.acuracy;
         speed = playerStats.speed;
@@ -44,6 +43,45 @@ public class StatsUpdater : MonoBehaviour
         isFreezed = playerStats.isFreezed;
         isBurning = playerStats.isBurning;
         isPoisoned = playerStats.isPoisoned;
+    }
+    private void Start()
+    {
+        onRedHearts?.Invoke(R_hearts);
+        onPurpleHearts?.Invoke(P_hearts);
+        onMaxLife?.Invoke(MaxLife);
+    }
+
+    public int Life { get => life; set => life = value; }
+    public int P_hearts 
+    { 
+        get => p_hearts; 
+        set 
+        {
+            if (value !=  p_hearts)
+            {
+                p_hearts = value;
+                onPurpleHearts.Invoke(value);
+            }
+        }
+    }
+    public int R_hearts { get => r_hearts; 
+        set
+        {
+            if (value != r_hearts)
+            {r_hearts = value;
+                onRedHearts.Invoke(value);
+            }
+        }
+    }
+    public int MaxLife { get => maxLife; 
+        set
+        {
+            if (value != maxLife)
+            {
+                maxLife = value;
+                onMaxLife.Invoke(value);
+            }
+        }
     }
 
 }

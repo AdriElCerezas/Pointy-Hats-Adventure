@@ -9,27 +9,27 @@ public class HealthBarManager : MonoBehaviour
     public int Index;
     public PlayerManager pManager;
 
-    int health, maxHealth, pHealth;
+    int rHealth, maxHealth, pHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();
 
 
     private void Awake()
     {
         player = pManager.players[Index];
-    }
-    private void Update()
-    {
-        DrawHearts();
+        Debug.Log("??");
+        player.GetComponent<StatsUpdater>().onMaxLife = OnMaxLife;
+        player.GetComponent<StatsUpdater>().onPurpleHearts = OnPurple;
+        player.GetComponent<StatsUpdater>().onRedHearts = OnRed;
     }
     public void DrawHearts()
     {
         ClearHearts();
-        health = player.GetComponent<StatsUpdater>().r_hearts;
-        maxHealth = player.GetComponent<StatsUpdater>().maxLife;
-        pHealth = player.GetComponent<StatsUpdater>().P_hearts;
-        int halfR = health % 2;
+        int halfR = rHealth % 2;
         int halfP = pHealth % 2;
-
+        Debug.Log("Red:" + rHealth);
+        Debug.Log("Purple" + pHealth);
+        Debug.Log("Max" + maxHealth);
+        /*
         for (int i = 0; i < (health/2) - halfR; i++) //FullHeart
         {
             CreateHeart(2, false);
@@ -53,9 +53,8 @@ public class HealthBarManager : MonoBehaviour
         for (int i = 0; i < halfP; i++) //HalfPheart
         {
             CreateHeart(1, true);
-        }
+        }*/
     }
-
     public void ClearHearts()
     {
         foreach (Transform t in transform)
@@ -74,4 +73,19 @@ public class HealthBarManager : MonoBehaviour
         hearts.Add(heartComponent);
     }
 
+    void OnMaxLife(int maxLife)
+    {
+       maxHealth = maxLife;
+       DrawHearts();
+    }
+    void OnPurple(int purple)
+    {
+        pHealth = purple;
+        DrawHearts();
+    }
+    void OnRed(int red)
+    {
+        rHealth = red;
+        DrawHearts();
+    }
 }

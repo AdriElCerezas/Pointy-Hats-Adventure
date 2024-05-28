@@ -33,7 +33,7 @@ public class HeartManager : MonoBehaviour
     {
         if ((collision.tag == "Player" || collision.tag == "Hatted") && playerObjective == null)
         {
-            if (isRed && (collision.GetComponent<StatsUpdater>().maxLife - collision.GetComponent<StatsUpdater>().r_hearts) >= healAmount )
+            if (isRed && (collision.GetComponent<StatsUpdater>().MaxLife - collision.GetComponent<StatsUpdater>().R_hearts) >= healAmount )
             {
                 playerObjective = collision.gameObject;
             }

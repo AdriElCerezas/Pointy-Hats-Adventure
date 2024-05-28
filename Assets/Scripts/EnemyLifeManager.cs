@@ -17,7 +17,7 @@ public class EnemyLifeManager : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
-            enemy.life -= collision.GetComponent<Bullet>().damage;
+            enemy.Life -= collision.GetComponent<Bullet>().damage;
 
             if (collision.GetComponent<Bullet>().freeze == true)
             {
@@ -33,7 +33,7 @@ public class EnemyLifeManager : MonoBehaviour
             }
 
             Destroy(collision.gameObject);
-            if(enemy.life <= 0)
+            if(enemy.Life <= 0)
             {
                 DropLoot();
                 Destroy(gameObject);

@@ -14,7 +14,7 @@ public class PlayerLifeManager : MonoBehaviour
     }
     private void Update()
     {
-        player.life = player.r_hearts + player.p_hearts;
+        player.Life = player.r_hearts + player.P_hearts;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,15 +22,15 @@ public class PlayerLifeManager : MonoBehaviour
         //Disparo
         if (collision.tag == "EnemyBullet" && gameObject.tag == "Player")
         {
-            if (player.life > 0)
+            if (player.Life > 0)
             {
-                if (player.p_hearts >= 1) //Daño a los morados
+                if (player.P_hearts >= 1) //Daño a los morados
                 {
-                    player.p_hearts -= collision.GetComponent<Bullet>().damage;
+                    player.P_hearts -= collision.GetComponent<Bullet>().damage;
                 }
                 else//Daño a rojos si no quedan morados
                 {
-                    player.p_hearts = 0;
+                    player.P_hearts = 0;
                     player.r_hearts -= collision.GetComponent<Bullet>().damage;
                 }
 
@@ -60,7 +60,7 @@ public class PlayerLifeManager : MonoBehaviour
             }
             if (!collision.GetComponentInParent<HeartManager>().isRed)
             {
-                player.p_hearts += (int)collision.GetComponentInParent<HeartManager>().healAmount;
+                player.P_hearts += (int)collision.GetComponentInParent<HeartManager>().healAmount;
                 Destroy(collision.gameObject);
             }
         }

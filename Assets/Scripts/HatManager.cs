@@ -9,7 +9,7 @@ public class HatManager : MonoBehaviour
 
     private void Update()
     {
-        if (playerStats.life <= 0)
+        if (playerStats.Life <= 0)
         {
             playerStats.isHatted = true;
             transform.gameObject.tag = "Hatted";

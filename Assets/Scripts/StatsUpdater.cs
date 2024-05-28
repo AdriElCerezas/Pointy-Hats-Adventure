@@ -6,8 +6,8 @@ public class StatsUpdater : MonoBehaviour
 {
     public Stats playerStats;
     public int maxLife;
-    public int life;
-    public int p_hearts;
+    private int life;
+    private int p_hearts;
     public int r_hearts;
     public float baseSpeed;
     public float speed;
@@ -24,14 +24,18 @@ public class StatsUpdater : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator = null;
     public float fireRate;
+
+    public int Life { get => life; set => life = value; }
+    public int P_hearts { get => p_hearts; set => p_hearts = value; }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         maxLife = playerStats.maxLife;
-        p_hearts = 0;
+        P_hearts = 0;
         r_hearts = maxLife;
-        life = p_hearts + r_hearts;
+        Life = P_hearts + r_hearts;
         baseSpeed = playerStats.baseSpeed;
         acuracy = playerStats.acuracy;
         speed = playerStats.speed;
@@ -41,4 +45,5 @@ public class StatsUpdater : MonoBehaviour
         isBurning = playerStats.isBurning;
         isPoisoned = playerStats.isPoisoned;
     }
+
 }

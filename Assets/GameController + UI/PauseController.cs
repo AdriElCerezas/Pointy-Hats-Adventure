@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
@@ -22,18 +23,21 @@ public class PauseController : MonoBehaviour
     }
     public void Pause()
     {
-        if (isPaused)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            isPaused = false;
-            pauseScreen.SetActive(isPaused);
-            Time.timeScale = 1;
+            if (isPaused)
+            {
+                isPaused = false;
+                pauseScreen.SetActive(isPaused);
+                Time.timeScale = 1;
+            }
+            else
+            {
+                isPaused = true;
+                pauseScreen.SetActive(isPaused);
+                Time.timeScale = 0;
+            }
+            playerManager.enableShooting = !isPaused;
         }
-        else
-        {
-            isPaused = true;
-            pauseScreen.SetActive(isPaused);
-            Time.timeScale = 0;
-        }
-        playerManager.enableShooting = !isPaused;
     }
 }

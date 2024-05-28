@@ -22,10 +22,22 @@ public class HealthHeart : MonoBehaviour
                     heartImage.sprite = rEmpty;
                     break;
                 case 1:
-                    heartImage.sprite = rEmpty;
+                    heartImage.sprite = rHalf;
                     break;
                 case 2:
                     heartImage.sprite = rFull;
+                    break;
+            }
+        }
+        else
+        {
+            switch (status)
+            {
+                case 1:
+                    heartImage.sprite = pHalf;
+                    break;
+                case 2:
+                    heartImage.sprite = pFull;
                     break;
             }
         }

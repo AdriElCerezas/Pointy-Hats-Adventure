@@ -9,7 +9,7 @@ public class UI_Manager : MonoBehaviour
     public PlayerManager pm;
     public GameObject Module1, Module2, Module3, Module4;
     public GameObject Player1, player2, Player3, Player4;
-    public GameObject Hud1;// Hud2, Hud3, Hud4;
+    public GameObject Hud1, Hud2, Hud3, Hud4;
     public Button StartButton;
     private void Awake()
     {
@@ -45,14 +45,17 @@ public class UI_Manager : MonoBehaviour
         if (index >= 2)
         {
             Module2.SetActive(true);
+            Hud2.SetActive(true);
         }
         if (index >= 3)
         {
             Module3.SetActive(true);
+            Hud3.SetActive(true);
         }
         if (index >= 4)
         {
             Module4.SetActive(true);
+            Hud4.SetActive(true);
         }
 
         switch (index)

@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBarManager : MonoBehaviour
 {
     public GameObject HUD_heart;
-    GameObject player;
+    public GameObject player;
     public int Index;
     public PlayerManager pManager;
+    public Image sphere;
 
     int rHealth, maxHealth, pHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();
@@ -16,7 +18,6 @@ public class HealthBarManager : MonoBehaviour
     private void Awake()
     {
         player = pManager.players[Index];
-        Debug.Log("??");
         player.GetComponent<StatsUpdater>().onMaxLife = OnMaxLife;
         player.GetComponent<StatsUpdater>().onPurpleHearts = OnPurple;
         player.GetComponent<StatsUpdater>().onRedHearts = OnRed;
@@ -26,34 +27,31 @@ public class HealthBarManager : MonoBehaviour
         ClearHearts();
         int halfR = rHealth % 2;
         int halfP = pHealth % 2;
-        Debug.Log("Red:" + rHealth);
-        Debug.Log("Purple" + pHealth);
-        Debug.Log("Max" + maxHealth);
-        /*
-        for (int i = 0; i < (health/2) - halfR; i++) //FullHeart
+        int fullR = (rHealth/2);
+        int fullP = (pHealth/2);
+        int empty = (maxHealth - rHealth) / 2;
+
+        for(int i = 0; i < fullR; i++)
         {
             CreateHeart(2, false);
-        }
-        for (int i = 0; i < halfR; i++) //HalfHeart
+        }//Full Red
+        for(int i = 0;i < halfR; i++)
         {
             CreateHeart(1, false);
-        }
-        if (health < maxHealth) //EmptyHeart
+        }//Half Red
+        for (int i = 0; i < empty; i++)
         {
-            for (int i = 0; i < ((maxHealth-health-halfR)/2); i++)
-            {
-                CreateHeart(0, false);
-            }
-        }
-
-        for (int i = 0; i < (int)(pHealth / 2) - halfP; i++) //FullPheart
+            CreateHeart(0, false);
+        }//Empty Red
+        for (int i = 0; i < fullP; i++)
         {
             CreateHeart(2, true);
-        }
-        for (int i = 0; i < halfP; i++) //HalfPheart
+        }//Full Purple
+        for (int i = 0; i < halfP; i++)
         {
             CreateHeart(1, true);
-        }*/
+        }//Half Purple
+        
     }
     public void ClearHearts()
     {

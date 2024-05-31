@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 6622908188500482114}
   - component: {fileID: 5386149257229075277}
   - component: {fileID: 6893609038908092182}
+  - component: {fileID: -8730144105546903447}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -186,9 +187,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/Dash[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 915517057233536824}
-        m_TargetAssemblyTypeName: StatusEffect, Assembly-CSharp
-        m_MethodName: Freeze
+      - m_Target: {fileID: -8730144105546903447}
+        m_TargetAssemblyTypeName: pauseGame, Assembly-CSharp
+        m_MethodName: Pause
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -404,10 +405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 7d7f8a0ee54c9344a96bb3373099d023, type: 2}
-  maxLife: 0
-  life: 0
-  p_hearts: 0
-  r_hearts: 0
   baseSpeed: 0
   speed: 0
   baseDashSpeed: 0
@@ -487,6 +484,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05851729b46268f4589993abee67fc80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8730144105546903447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3820242173566904602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e82cb4069699bb43b097ea5fb596cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4003438060256022343

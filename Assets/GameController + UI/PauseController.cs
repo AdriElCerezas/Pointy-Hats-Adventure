@@ -14,14 +14,7 @@ public class PauseController : MonoBehaviour
     {
         playerManager = GetComponent<PlayerManager>();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Pause();
-        }
-    }
-    public void Pause()
+    public void onPause()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {

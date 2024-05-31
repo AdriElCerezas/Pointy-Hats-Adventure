@@ -24,15 +24,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Freeze",
-                    "type": "Button",
-                    "id": "0ee2bb07-67da-430b-ad2c-5c32f7950eab",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "AimMouse",
                     "type": "Value",
                     "id": "314a821a-93bd-4354-b9a6-ba7566c476cb",
@@ -54,6 +45,15 @@
                     "name": "Shoot",
                     "type": "Button",
                     "id": "0ad60e29-5cc9-4d62-ad3a-95deb3f4fc76",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0ee2bb07-67da-430b-ad2c-5c32f7950eab",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -185,7 +185,7 @@
                 {
                     "name": "",
                     "id": "67437a9c-3a9a-490f-ad1e-e58c68c1c18a",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -201,28 +201,6 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "17e1c012-2627-4269-9ecb-4a7dfe5254f6",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Freeze",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f98f57c0-17ee-4d83-9ed8-dc79b4c17d17",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Freeze",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -267,6 +245,28 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17e1c012-2627-4269-9ecb-4a7dfe5254f6",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f98f57c0-17ee-4d83-9ed8-dc79b4c17d17",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

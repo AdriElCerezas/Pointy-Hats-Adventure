@@ -9,6 +9,8 @@ public class HealthBarManager : MonoBehaviour
     public GameObject player;
     public int Index;
     public PlayerManager pManager;
+    public Image ball;
+    public Sprite live, hatted;
 
     int rHealth, maxHealth, pHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();
@@ -20,6 +22,7 @@ public class HealthBarManager : MonoBehaviour
         player.GetComponent<StatsUpdater>().onMaxLife = OnMaxLife;
         player.GetComponent<StatsUpdater>().onPurpleHearts = OnPurple;
         player.GetComponent<StatsUpdater>().onRedHearts = OnRed;
+        ball.sprite = live;
     }
     public void DrawHearts()
     {
@@ -50,6 +53,8 @@ public class HealthBarManager : MonoBehaviour
         {
             CreateHeart(1, true);
         }//Half Purple
+
+        isDead(pHealth + rHealth == 0);
         
     }
     public void ClearHearts()
@@ -69,7 +74,19 @@ public class HealthBarManager : MonoBehaviour
         heartComponent.SetHeartImage(health, isPurple);
         hearts.Add(heartComponent);
     }
-
+    public void isDead(bool dead)
+    {
+        if (dead)
+        {
+            ball.sprite = hatted;
+            ball.color = Color.grey + player.GetComponent<SpriteRenderer>().color;
+        }
+        else
+        {
+            ball.sprite = live;
+            ball.color = player.GetComponent<SpriteRenderer>().color;
+        }
+    }
     void OnMaxLife(int maxLife)
     {
        maxHealth = maxLife;

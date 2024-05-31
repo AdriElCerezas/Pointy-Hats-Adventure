@@ -19,19 +19,6 @@ public class EnemyLifeManager : MonoBehaviour
         {
             enemy.Life -= collision.GetComponent<Bullet>().damage;
 
-            if (collision.GetComponent<Bullet>().freeze == true)
-            {
-                enemy.isFreezed = true;
-            }
-            if (collision.GetComponent<Bullet>().burn == true)
-            {
-                enemy.isBurning = true;
-            }
-            if (collision.GetComponent<Bullet>().freeze == true)
-            {
-                enemy.isPoisoned = true;
-            }
-
             Destroy(collision.gameObject);
             if(enemy.Life <= 0)
             {

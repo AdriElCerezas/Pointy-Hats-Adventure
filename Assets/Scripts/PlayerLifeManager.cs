@@ -34,19 +34,6 @@ public class PlayerLifeManager : MonoBehaviour
                     player.R_hearts -= collision.GetComponent<Bullet>().damage;
                 }
 
-                if (collision.GetComponent<Bullet>().freeze == true)
-                {
-                    player.isFreezed = true;
-                }
-                if (collision.GetComponent<Bullet>().burn == true)
-                {
-                    player.isBurning = true;
-                }
-                if (collision.GetComponent<Bullet>().freeze == true)
-                {
-                    player.isPoisoned = true;
-                }
-
                 Destroy(collision.gameObject);
             }
         }

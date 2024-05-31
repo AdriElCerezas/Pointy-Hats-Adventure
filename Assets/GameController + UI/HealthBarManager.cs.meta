@@ -3,7 +3,13 @@ guid: 9ea3a578b10095141a0f641a2cb64827
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HUD_heart: {instanceID: 0}
+  - player: {instanceID: 0}
+  - pManager: {instanceID: 0}
+  - ball: {instanceID: 0}
+  - live: {fileID: -264139829, guid: 0f10c1354e6706a419530f165bc6bdab, type: 3}
+  - hatted: {fileID: 1562984268, guid: 0f10c1354e6706a419530f165bc6bdab, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

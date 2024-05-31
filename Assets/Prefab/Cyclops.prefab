@@ -361,10 +361,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: b948a0927bc8b9a488f4b1be3243c043, type: 2}
-  maxLife: 0
-  life: 0
-  p_hearts: 0
-  r_hearts: 0
   baseSpeed: 0
   speed: 0
   baseDashSpeed: 0
@@ -455,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestPlayer: {fileID: 0}
-  sightDistance: 5
+  sightDistance: 10
 --- !u!114 &2064702605864042640
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class HealthBarManager : MonoBehaviour
     public GameObject player;
     public int Index;
     public PlayerManager pManager;
-    public Image sphere;
 
     int rHealth, maxHealth, pHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();

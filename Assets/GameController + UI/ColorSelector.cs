@@ -11,6 +11,7 @@ public class ColorSelector : MonoBehaviour
     public GameObject player;
     public Color color;
     public int index;
+    public Image ball;
     public Action<Color, int> onColorSet;
 
     public void SetPlayer(GameObject player)
@@ -23,6 +24,7 @@ public class ColorSelector : MonoBehaviour
     {
         color = newColor.GetComponent<Image>().color;
         GetComponent<Image>().color = color;
+        ball.color = color;
         onColorSet.Invoke(color, index);
     }
 }

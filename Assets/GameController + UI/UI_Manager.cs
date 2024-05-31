@@ -35,7 +35,6 @@ public class UI_Manager : MonoBehaviour
     }
     public void OnJoin(int index, GameObject player)
     {
-        Debug.Log(index);
         StartButton.enabled = true;
         if (index >= 1)
         {

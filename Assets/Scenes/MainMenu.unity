@@ -543,6 +543,10 @@ PrefabInstance:
       value: Player3
       objectReference: {fileID: 0}
     - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 192940259}
+    - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
       propertyPath: index
       value: 2
       objectReference: {fileID: 0}
@@ -636,7 +640,6 @@ MonoBehaviour:
   player: {fileID: 0}
   Index: 1
   pManager: {fileID: 1641542349}
-  sphere: {fileID: 1042745505}
 --- !u!114 &148458196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,6 +1099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player4
       objectReference: {fileID: 0}
+    - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 935108479}
     - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
       propertyPath: index
       value: 3
@@ -1612,7 +1619,6 @@ MonoBehaviour:
   player: {fileID: 0}
   Index: 3
   pManager: {fileID: 1641542349}
-  sphere: {fileID: 935108479}
 --- !u!114 &618014296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,7 +2036,6 @@ MonoBehaviour:
   player: {fileID: 0}
   Index: 2
   pManager: {fileID: 1641542349}
-  sphere: {fileID: 192940259}
 --- !u!114 &879681833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2681,6 +2686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1042745505}
     - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
       propertyPath: index
       value: 1
@@ -3877,7 +3886,6 @@ MonoBehaviour:
   player: {fileID: 0}
   Index: 0
   pManager: {fileID: 1641542349}
-  sphere: {fileID: 2096320066}
 --- !u!114 &1933935859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4455,6 +4463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2923162474913448260, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 2096320066}
     - target: {fileID: 5530948387731274216, guid: 0c58775bdbf9cbe449de5217ef8a3e73, type: 3}
       propertyPath: m_Name
       value: Module1

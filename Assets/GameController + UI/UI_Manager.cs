@@ -40,21 +40,25 @@ public class UI_Manager : MonoBehaviour
         {
             Module1.SetActive(true);
             Hud1.SetActive(true);
+            Module1.GetComponentInChildren<Button>().Select();
         }
         if (index >= 2)
         {
             Module2.SetActive(true);
             Hud2.SetActive(true);
+            Module2.GetComponentInChildren<Button>().Select();
         }
         if (index >= 3)
         {
             Module3.SetActive(true);
             Hud3.SetActive(true);
+            Module3.GetComponentInChildren<Button>().Select();
         }
         if (index >= 4)
         {
             Module4.SetActive(true);
             Hud4.SetActive(true);
+            Module4.GetComponentInChildren<Button>().Select();
         }
 
         switch (index)

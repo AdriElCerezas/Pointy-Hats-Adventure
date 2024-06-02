@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestPlayer: {fileID: 0}
-  sightDistance: 10
+  sightDistance: 40
 --- !u!114 &2064702605864042640
 MonoBehaviour:
   m_ObjectHideFlags: 0

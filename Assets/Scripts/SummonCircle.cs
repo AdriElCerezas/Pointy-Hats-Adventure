@@ -39,7 +39,7 @@ public class SummonCircle : MonoBehaviour
             }
         }
     }
-    void Summon()
+    public void Summon()
     {
         Instantiate(summonedEnemy, transform.position, Quaternion.identity);
 

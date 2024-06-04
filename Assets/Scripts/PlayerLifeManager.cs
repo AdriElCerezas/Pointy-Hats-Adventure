@@ -39,7 +39,6 @@ public class PlayerLifeManager : MonoBehaviour
         }
         if (collision.tag == "Heart" && collision.IsTouching(player.hitbox))
         {
-            Debug.Log("Heart touched");
             if (collision.GetComponentInParent<HeartManager>().isRed && (player.MaxLife - player.R_hearts) >= collision.GetComponentInParent<HeartManager>().healAmount)
             {
                 player.R_hearts += (int)collision.GetComponentInParent<HeartManager>().healAmount;

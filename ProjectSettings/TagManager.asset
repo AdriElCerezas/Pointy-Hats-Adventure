@@ -10,7 +10,9 @@ TagManager:
   - EnemyBullet
   - Room
   - Heart
-  - RoomSpawn
+  - RoomTemplate
+  - RoomChecker
+  - RoomWall
   layers:
   - Default
   - TransparentFX

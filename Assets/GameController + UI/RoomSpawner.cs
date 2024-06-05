@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
 {
-    public RoomInitiator roomInitiator;
-    void Awake()
+    public int openSide;
+    //1 -> UP
+    //2 -> RIGHT
+    //3 -> DOWN
+    //4 -> LEFT
+    private RoomTemplates roomTemplates;
+    int r;
+    private void Start()
     {
-        roomInitiator.onSpawn = ActivateSpawners;
+        roomTemplates = GameObject.FindGameObjectWithTag("RoomTemplate").GetComponent<RoomTemplates>();
+        Invoke("Spawn", 0.2f);
     }
-
-    void ActivateSpawners(bool closed)
+    public void Spawn()
     {
-        Debug.Log("Door:" + closed);
-        if (closed)
+        if (openSide == 1)
         {
-            SummonCircle[] spawners = GetComponentsInChildren<SummonCircle>();
-            foreach (SummonCircle spawner in spawners)
-            {
-                spawner.Summon();
-            }
+            //1 -> UP
+            r = Random.Range(0, roomTemplates.UpRooms.Length);
+            Instantiate(roomTemplates.UpRooms[r], transform.position, roomTemplates.UpRooms[r].transform.rotation);
+        }
+        else if (openSide == 2)
+        {
+            //2 -> RIGHT
+            r = Random.Range(0, roomTemplates.RightRooms.Length);
+            Instantiate(roomTemplates.RightRooms[r], transform.position, roomTemplates.RightRooms[r].transform.rotation);
+        }
+        else if(openSide == 3)
+        {
+            //3 -> DOWN
+            r = Random.Range(0, roomTemplates.DownRooms.Length);
+            Instantiate(roomTemplates.DownRooms[r], transform.position, roomTemplates.DownRooms[r].transform.rotation);
+        }
+        else if( openSide == 4)
+        {
+            //4 -> LEFT
+            r = Random.Range(0, roomTemplates.LeftRooms.Length);
+            Instantiate(roomTemplates.LeftRooms[r], transform.position, roomTemplates.LeftRooms[r].transform.rotation);
         }
     }
 }

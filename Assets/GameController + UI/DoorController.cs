@@ -7,7 +7,12 @@ public class DoorController : MonoBehaviour
     public RoomInitiator roomInitiator;
     void Awake()
     {
+        roomInitiator = GetComponentInParent<RoomInitiator>();
         roomInitiator.onDoorsClose = ControlDoors;
+    }
+    private void Start()
+    {
+        
     }
 
     private void ControlDoors(bool closed)

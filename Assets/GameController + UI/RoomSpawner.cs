@@ -16,7 +16,16 @@ public class RoomSpawner : MonoBehaviour
     private void Start()
     {
         roomTemplates = GameObject.FindGameObjectWithTag("RoomTemplate").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 0.5f);
+        if (!roomTemplates.endSpawning)
+        {
+            Invoke("Spawn", 1f);
+        }
+        else
+        {
+            float u = Random.Range(40, 1000);
+            u = u * 0.01f;
+            Invoke("SpawnUSegments", u);
+        }
     }
     public void Spawn()
     {
@@ -50,12 +59,39 @@ public class RoomSpawner : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void SpawnUSegments()
+    {
+        if (!spawned)
+        {
+            if (openSide == 1)
+            {
+                Instantiate(roomTemplates.EndRooms[0], transform.position + spawningMod, Quaternion.identity);
+            }
+            else if (openSide == 2)
+            {
+                //2 -> RIGHT
+                Instantiate(roomTemplates.EndRooms[1], transform.position + spawningMod, Quaternion.identity);
+            }
+            else if (openSide == 3)
+            {
+                //3 -> DOWN
+                Instantiate(roomTemplates.EndRooms[2], transform.position + spawningMod, Quaternion.identity);
+            }
+            else if (openSide == 4)
+            {
+                //4 -> LEFT
+                Instantiate(roomTemplates.EndRooms[3], transform.position + spawningMod, Quaternion.identity);
+            }
+            spawned = true;
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(gameObject.name + collision.name);
         if (collision.gameObject.tag == "Room")
         {
-            Debug.Log("AutoDestroy");
+            spawned = true;
             Destroy(gameObject.GetComponentInParent<Transform>().gameObject);
         }
     }

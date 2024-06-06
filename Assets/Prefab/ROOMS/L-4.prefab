@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6361938858418723813}
   - component: {fileID: 5084513413097663103}
   - component: {fileID: 889100132301039854}
+  - component: {fileID: 2876751750329704432}
   m_Layer: 0
   m_Name: L-4
   m_TagString: Room
@@ -137,6 +138,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2876751750329704432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624711859314302449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e914614454b805f4182a2fee29033060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2325720365479839531
 GameObject:
   m_ObjectHideFlags: 0

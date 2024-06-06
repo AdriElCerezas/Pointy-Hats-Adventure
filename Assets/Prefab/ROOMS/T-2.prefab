@@ -3890,6 +3890,7 @@ GameObject:
   - component: {fileID: 1695375785918269189}
   - component: {fileID: 7752252794889263241}
   - component: {fileID: -482018466313669790}
+  - component: {fileID: 7230828724042402952}
   m_Layer: 0
   m_Name: T-2
   m_TagString: Room
@@ -4015,6 +4016,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7230828724042402952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599300065036920581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e914614454b805f4182a2fee29033060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5913246325799573160
 GameObject:
   m_ObjectHideFlags: 0

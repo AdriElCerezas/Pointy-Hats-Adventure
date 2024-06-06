@@ -88,7 +88,6 @@ public class RoomSpawner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(gameObject.name + collision.name);
         if (collision.gameObject.tag == "Room")
         {
             spawned = true;

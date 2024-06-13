@@ -5,17 +5,18 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public RoomInitiator roomInitiator;
+    bool closed = false;
     void Awake()
     {
         roomInitiator = GetComponentInParent<RoomInitiator>();
-        roomInitiator.onDoorsClose = ControlDoors;
+        roomInitiator.onDoorsClose = EventDelayer;
     }
-    private void Start()
+    private void EventDelayer(bool toTransfer)
     {
-        
+        closed = toTransfer;
+        Invoke("ControlDoors", 0.5f);
     }
-
-    private void ControlDoors(bool closed)
+    private void ControlDoors()
     {
             SpriteRenderer[] roomDoor = GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer door in roomDoor)

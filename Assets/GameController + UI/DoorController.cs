@@ -17,11 +17,21 @@ public class DoorController : MonoBehaviour
 
     private void ControlDoors(bool closed)
     {
+<<<<<<< Updated upstream
             SpriteRenderer[] roomDoor = GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer door in roomDoor)
             {
                 door.enabled = closed;
                 door.GetComponent<Collider2D>().enabled = closed;
             }
+=======
+        SpriteRenderer[] roomDoor = GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer door in roomDoor)
+        {
+            door.enabled = closed;
+            door.GetComponent<Collider2D>().enabled = closed;
+            //door.GetComponent<Animator>().SetBool("Closed", closed);
+        }
+>>>>>>> Stashed changes
     }
 }

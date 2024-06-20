@@ -15,6 +15,10 @@ public class RoomInitiator : MonoBehaviour
     private void Start()
     {
         totalPlayers = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerManager>().players.Count;
+<<<<<<< Updated upstream
+=======
+        onSpawn.Invoke(roomClosed);
+>>>>>>> Stashed changes
         onDoorsClose.Invoke(roomClosed);
     }
 
@@ -24,9 +28,11 @@ public class RoomInitiator : MonoBehaviour
         {
             if (collision.tag == "Player" || collision.tag == "Hatted")
             {
+                Debug.Log(collision.gameObject.name);
                 playersInside++;
                 if (playersInside == totalPlayers && roomClosed == false)
                 {
+                    Debug.Log("CloseRoom" + playersInside + totalPlayers);
                     roomClosed = true;
                     onSpawn.Invoke(roomClosed);
                     onDoorsClose.Invoke(roomClosed);

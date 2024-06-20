@@ -15,7 +15,6 @@ public class RoomInitiator : MonoBehaviour
     private void Start()
     {
         totalPlayers = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerManager>().players.Count;
-        onDoorsClose.Invoke(roomClosed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

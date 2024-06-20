@@ -22,7 +22,7 @@ public class UI_Manager : MonoBehaviour
     }
     public void StartLoading()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
     }
     public void OnPlayButton()
     { 

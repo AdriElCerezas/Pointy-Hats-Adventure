@@ -15,10 +15,7 @@ public class RoomInitiator : MonoBehaviour
     private void Start()
     {
         totalPlayers = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerManager>().players.Count;
-<<<<<<< Updated upstream
-=======
         onSpawn.Invoke(roomClosed);
->>>>>>> Stashed changes
         onDoorsClose.Invoke(roomClosed);
     }
 

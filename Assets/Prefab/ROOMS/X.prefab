@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 3256921509170246292}
   m_Layer: 8
   m_Name: DoorUp
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 877409976652567546}
   m_Layer: 8
   m_Name: DoorLeft
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 7612783652084350366}
   m_Layer: 8
   m_Name: DoorRight
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6061,7 +6061,7 @@ GameObject:
   - component: {fileID: 6575161475765831743}
   m_Layer: 8
   m_Name: DoorDown
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

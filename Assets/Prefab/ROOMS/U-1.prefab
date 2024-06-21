@@ -3709,7 +3709,7 @@ GameObject:
   - component: {fileID: 3643138017487365758}
   m_Layer: 8
   m_Name: DoorDown
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

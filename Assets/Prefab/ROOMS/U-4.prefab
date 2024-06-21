@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 491799375481016611}
   m_Layer: 8
   m_Name: DoorLeft
-  m_TagString: Untagged
+  m_TagString: RoomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

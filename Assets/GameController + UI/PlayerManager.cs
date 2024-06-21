@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     public int index = 0;
     public ColorSelector cs1, cs2, cs3, cs4;
     public bool enableShooting;
+    public bool allDead = false;
 
     void Awake()
     {
@@ -41,5 +43,20 @@ public class PlayerManager : MonoBehaviour
     void SetColor(Color c, int i)
     {
         players[i].GetComponent<SpriteRenderer>().color = c;
+    }
+    private void FixedUpdate()
+    {
+        int deadPlayers = 0;
+        foreach (var p in players)
+        {
+            if (p.tag == "Hatted")
+            {
+                deadPlayers++;
+            }
+        }
+        if (deadPlayers == index + 1)
+        {
+            SceneManager.LoadScene("GameRestarter");
+        }
     }
 }

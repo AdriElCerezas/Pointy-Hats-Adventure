@@ -33,4 +33,9 @@ public class PauseController : MonoBehaviour
             playerManager.enableShooting = !isPaused;
         }
     }
+    public void OnRestart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GameRestarter");
+    }
 }

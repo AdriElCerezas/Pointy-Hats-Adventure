@@ -5,19 +5,34 @@ using UnityEngine;
 public class RoomTemplates : MonoBehaviour
 {
     public GameObject[] DownRooms, UpRooms, LeftRooms, RightRooms, EndRooms;
-    public float timer = 10f; //One round of rooms per second
+    public float timer = 5f; //Two round of rooms per second
     public bool endSpawning = false;
-    [HideInInspector]public List<GameObject> rooms = new List<GameObject>();
+    public List<GameObject> rooms = new List<GameObject>();
+    public GameObject PortalPrefab;
 
+    bool justOnce = false;
     private void Update()
     {
-        if (timer > 0) 
+        if (timer > -3.5f) 
         { 
             timer -= Time.deltaTime;
         }
-        else
+        if(timer < 0)
         {
             endSpawning = true; 
+        }
+        if (timer < -3.5f && !justOnce && endSpawning)
+        {
+            justOnce = true;
+            Instantiate(PortalPrefab, rooms[rooms.Count - 1].transform.position + new Vector3(10, 10, 0), Quaternion.identity);
+            GameObject[] finalRoom = rooms[rooms.Count - 1].GetComponentsInChildren<GameObject>(); 
+            foreach (GameObject s in finalRoom)
+            {
+                if(s.name == "Spawners")
+                {
+                    Destroy(s);
+                }
+            }
         }
     }
 }

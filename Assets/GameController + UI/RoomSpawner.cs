@@ -18,11 +18,11 @@ public class RoomSpawner : MonoBehaviour
         roomTemplates = GameObject.FindGameObjectWithTag("RoomTemplate").GetComponent<RoomTemplates>();
         if (!roomTemplates.endSpawning)
         {
-            Invoke("Spawn", 1f);
+            Invoke("Spawn", 0.5f);
         }
         else
         {
-            float u = Random.Range(40, 1000);
+            float u = Random.Range(40, 300);
             u = u * 0.01f;
             Invoke("SpawnUSegments", u);
         }

@@ -28,7 +28,6 @@ public class RoomTemplates : MonoBehaviour
             Component[] finalRoom = rooms[rooms.Count - 1].GetComponentsInChildren<Component>(); 
             foreach (var s in finalRoom)
             {
-                Debug.Log(s.name);
                 if(s.name == "Spawners")
                 {
                     Destroy(s.gameObject);

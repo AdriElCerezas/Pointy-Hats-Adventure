@@ -25,12 +25,13 @@ public class RoomTemplates : MonoBehaviour
         {
             justOnce = true;
             Instantiate(PortalPrefab, rooms[rooms.Count - 1].transform.position + new Vector3(10, 10, 0), Quaternion.identity);
-            GameObject[] finalRoom = rooms[rooms.Count - 1].GetComponentsInChildren<GameObject>(); 
-            foreach (GameObject s in finalRoom)
+            Component[] finalRoom = rooms[rooms.Count - 1].GetComponentsInChildren<Component>(); 
+            foreach (var s in finalRoom)
             {
+                Debug.Log(s.name);
                 if(s.name == "Spawners")
                 {
-                    Destroy(s);
+                    Destroy(s.gameObject);
                 }
             }
         }

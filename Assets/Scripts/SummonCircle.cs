@@ -23,11 +23,6 @@ public class SummonCircle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            spawning = true;
-            animator.SetBool("summoning", spawning);
-        }
         if (spawning)
         {
             spawnTimer -= Time.deltaTime;

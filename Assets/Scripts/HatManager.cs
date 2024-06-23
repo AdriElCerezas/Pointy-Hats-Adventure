@@ -6,7 +6,13 @@ using UnityEngine;
 public class HatManager : MonoBehaviour
 {
     public StatsUpdater playerStats;
+    bool nowDead = false;
+    PlayerManager playerManager;
 
+    private void Start()
+    {
+        playerManager = GameObject.FindGameObjectWithTag("GameController").GetComponentInChildren<PlayerManager>();
+    }
     private void Update()
     {
         if (playerStats.Life <= 0)
@@ -18,6 +24,12 @@ public class HatManager : MonoBehaviour
                 r.enabled = false;
             }
             GetComponent<Renderer>().enabled = true;
+            if (!nowDead)
+            {
+                nowDead = true;
+                playerManager.DeadPlayer();
+
+            }
         }
         else
         {
@@ -28,6 +40,11 @@ public class HatManager : MonoBehaviour
                 r.enabled = true;
             }
             GetComponent<Renderer>().enabled = true;
+            if (nowDead)
+            {
+                nowDead = false;
+                playerManager.RevivedPLayer();
+            }
         }
         playerStats.animator.SetBool("IsHatted", playerStats.isHatted);
     }

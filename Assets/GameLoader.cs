@@ -27,7 +27,7 @@ public class GameLoader : MonoBehaviour
         {
             Destroy(g);
         }
-        StartGame();
+        Invoke("StartGame", 5f);
     }
 
     void StartGame()

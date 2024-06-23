@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public int index = 0;
     public ColorSelector cs1, cs2, cs3, cs4;
     public bool enableShooting;
-    public bool allDead = false;
+    public int deadPlayers = 0;
 
     void Awake()
     {
@@ -55,6 +55,26 @@ public class PlayerManager : MonoBehaviour
             }
         }
         if (deadPlayers == index + 1)
+        {
+            SceneManager.LoadScene("GameRestarter");
+        }
+    }
+
+    public void DeadPlayer()
+    {
+        deadPlayers++;
+        if (deadPlayers == index)
+        {
+            Invoke("RestartGame", 10f);
+        }
+    }
+    public void RevivedPLayer()
+    {
+        deadPlayers--;
+    }
+    void RestartGame()
+    {
+        if (deadPlayers == index)
         {
             SceneManager.LoadScene("GameRestarter");
         }
